@@ -1,0 +1,119 @@
+body, td, th, input, select, textarea, option, optgroup {
+  color:#000000;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:12px;
+}
+#header_image
+{
+  background: url("/images/admin/header.png") repeat-x scroll left top transparent;
+  width: 100%;
+  height: 56px;
+  min-width: 960px;
+}
+#header_menu
+{
+  background: url("/images/admin/menu.png") repeat-x scroll left top transparent;
+  width: 100%;
+  height: 34px;
+  min-width: 960px;
+}
+
+#footer_image
+{
+  background: url("/images/admin/footer.png") repeat-x scroll left top transparent;
+  width: 100%;
+  height: 128px;
+  min-width: 960px;
+}
+#loginContainer
+{
+  background: url("/images/admin/background.png") repeat-x scroll left top transparent;
+  width: 100%;
+  height: 580px;
+  margin-top: 1px;
+  padding-top: 40px;
+}
+#loginBox
+{
+  width: 325px;
+  height: 300px;
+  min-height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#bigBox{
+  width: 95%;
+  min-height: 580px;
+  min-width: 960px;
+  margin: 30px auto;
+  /*background-color: #cccccc;*/
+}
+.box {
+  margin-bottom:15px;
+}
+.box .heading {
+  background:url("/images/admin/box_center.png") repeat-x scroll 0 0 transparent;
+  height:40px;
+  margin-bottom:0;
+}
+.box > .left {
+  background:url("/images/admin/box_left.png") no-repeat scroll 0 0 transparent;
+  float:left;
+  height:40px;
+  width:7px;
+}
+.box .right {
+  background:url("/images/admin/box_right.png") no-repeat scroll 0 0 transparent;
+  float:right;
+  height:40px;
+  width:7px;
+}
+.box .heading h1 {
+  background:url("/images/admin/lockscreen.png") no-repeat scroll 2px 9px transparent;
+  color:#003A88;
+  float:left;
+  font-size:16px;
+  margin:0;
+  padding:11px 0 11px 30px;
+}
+.box .heading .buttons {
+  float:right;
+  padding-top:8px;
+}
+.box .content {
+  border-bottom:1px solid #CCCCCC;
+  border-left:1px solid #CCCCCC;
+  border-right:1px solid #CCCCCC;
+  min-height:300px;
+  padding:10px;
+}
+.box .heading h1.bkg_dashboard{background:url("/images/admin/home.png") no-repeat scroll 2px 9px transparent;}
+
+.header1
+{
+  background: none repeat scroll 0% 0% rgb(84, 124, 150);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(84, 124, 150);
+  border-bottom: 1px solid rgb(142, 174, 195);
+  padding: 5px; font-size: 14px;
+  font-weight: bold;
+}
+.blu-container
+{
+  border: 1px solid rgb(84, 124, 150);
+}
+table.vlist
+{
+  border-right: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+}
+table.vlist th, table.vlist td{border-left: 1px solid #dddddd;  border-bottom: 1px solid #dddddd;height: 30px;}
+table.vlist th{background-color: #efefef;}
+table.vlist td{padding-left: 5px;padding-right: 5px;}
+
+li.folder
+{
+	font-weight: bold;
+	background: url("/images/ltFld.gif") no-repeat scroll left center transparent;
+	padding: 5px 0 5px 22px;
+}

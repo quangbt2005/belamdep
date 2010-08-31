@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<head>
+<title>System Error : Process Interrupted.</title>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<hr />
+The error occurred and processing was interrupted.
+<hr />
+プログラムにて処理続行不可能なエラーが検出された為、強制終了されました。<br /><br />
+{{ PHP_ERROR_MESSAGE }}
+</body>
+</html>
