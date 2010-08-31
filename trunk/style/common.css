@@ -1,0 +1,296 @@
+body{font-family: Tahoma;}
+div{margin: 0px auto;text-align: center;padding: auto;background-color: transparent;}
+
+/*table {font:bold 11px/14px Tahoma;}*/
+a{text-decoration: none;}
+a:hover{color: #AABBDD;text-decoration: underline;}
+
+ul.categories{margin: 0;padding: 0 0 0 8;list-style-type: none;}
+ul.categories li{padding: 10 0 10 0;}
+ul.categories li a
+{
+  background-position:left center;
+  background-repeat:no-repeat;
+  color:#008400;
+  font-family:Verdana,Arial,sans-serif;
+  font-size:10pt;
+  font-weight:bold;
+  padding:10px 10px 10px 35px;
+  text-decoration:none;
+}
+ul.categories li a:hover{color: red;}
+a.saleofflink:hover{color: yellow;}
+
+#allheader{clear: both;width: 960px;}
+#allleft{float: left;width: 200px;margin: 5 0 5 0;}
+#allcenter{float: left;width:550px;background-color: white;margin: 5 0 5 5;}
+#allright{float: left;width: 200px;margin: 5 0 5 5;}
+#allfooter{clear: both;width:960px;}
+
+#marquee_wrapper{position: relative;left: 0px;}
+.navigation2_icon
+{
+  float: left;
+  position: relative;
+  z-index: 100;
+  text-align: right;
+  background-color: transparent;
+  width: 100%;
+  top: -20px;
+  height: 25px;
+}
+
+a.headerNavigation2
+{
+  color: black;
+  background-position: center left;
+  font-weight: bold;
+  font-size: 8pt;
+  background-repeat: no-repeat;
+  padding: 10 0 12 35;
+}
+
+div.headerNavigation {
+  background: url("/images/mid_nav_1x81.gif") repeat-x;
+  height: 43px;
+  width: 100%;
+  margin-top:-14px;
+  text-align: left;
+  font:bold 13px Verdana;
+}
+ul.headerNavigation{padding:13 0 10 0;margin-left:0;}
+ul.headerNavigation li{display: inline;}
+ul.headerNavigation li a{padding: 10 20;text-decoration: none;color: white;}
+ul.headerNavigation li a:hover{color: yellow;text-decoration: none;}
+
+div.side_container
+{
+  width: 198px;
+  text-align: left;
+  background-color: #EDF2FC;
+  border-top: 1px solid #7DCCFF;
+  border-bottom: 1px solid #7DCCFF;
+}
+div.container{padding: 0px;background-color: #EDF2FC;border: 1px solid #7DCCFF;}
+.product
+{
+  width: 181px;
+  height: 230px;
+  background-color: white;
+  float: left;
+  margin: 1 0 0 1;
+  font:bold 11px/28px Tahoma;
+}
+
+.product a{ text-decoration:none; color:#C11502; }
+
+.wrapper{float: left;background-color: #7DCCFF;padding: 0 0 1 0;}
+div.clear{clear: both;}
+div.seperator{clear: both;width:1px;height:10px;}
+td.title-center
+{
+  background: url("/images/title_red_mid_1x36.gif") repeat-x scroll left top transparent;
+  height: 36px;
+  font:bold 12px Verdana;
+  color: #333399;
+  text-transform: uppercase;
+}
+
+td.title-corner-left,td.title-corner-right{height: 36px; width: 5px;}
+td.title-corner-left{background: url("/images/title_red_left_5x36.gif") no-repeat scroll left top transparent;}
+td.title-corner-right{background: url("/images/title_red_right_5x36.gif") no-repeat scroll left top transparent;}
+
+a.side-cart{color: black; text-decoration: none}
+a.side-cart:hover,a.account_man:hover{text-decoration: underline;color:#AABBDD;}
+a.account_man{font:normal 14px/32px Tahoma;text-decoration: none;color:black;}
+p.phone_contact, p.yahoo_contact
+{
+  color:#C11502;
+  font:bold 14px/32px Tahoma;
+  height:32px;
+  margin:8px 0 8px 0;
+  padding:0 6px 0 44px;
+}
+
+p.yahoo_contact{background:url("/images/ym5.png") no-repeat scroll 6px center transparent;}
+p.phone_contact{background:url("/images/icon_phone_32x32.gif") no-repeat scroll 6px top transparent;}
+
+a.contact{text-decoration: none;}
+span.smallguide{font:italic 12px/24px Arial; padding: 3px;}
+a.news1{font:italic 12px/20px Arial;color:#56A7CB;}
+a.news2{font:bold 15px/20px Arial;color:red;}
+
+
+/* --------------------------------------------------------------------------------------------- */
+/* TABLE PAGER
+/* --------------------------------------------------------------------------------------------- */
+table .pager{}
+/* --------------------------------------------------------------------------------------------- */
+/* TABLE LIST
+/* --------------------------------------------------------------------------------------------- */
+table.list{color: black; border: 1px solid #B6B7CB;}
+table.list th{background-color: #B6B7CB;
+  color: #20619E;
+  font:bold 10px/14px Tahoma;
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  height: 32px;
+}
+
+table.list td
+{
+  background-color: #EFF7FF;
+  padding: 8px 5px 8px 5px;
+  font:bold 12px/14px Tahoma;
+}
+tr.newsContent td
+{
+  margin: 0px 0px 0px 0px;
+  font-family: Verdana, Arial, sans-serif;
+  text-decoration: none;
+  color: #000000;
+  padding: 5 2 3 2;
+  background-repeat: no-repeat;
+  background-position: center left;
+  font-size: 20pt;
+  font-weight: normal;
+}
+/* --------------------------------------------------------------------------------------------- */
+/* TABLE REGISTER
+/* --------------------------------------------------------------------------------------------- */
+table.register
+{
+  border: 1px solid rgb(125,204,255);
+  background: none repeat scroll 0 0 #EDF2FC;
+  font:normal 14px/20px Tahoma;
+  color: black;
+}
+
+table.register th{padding: 5px;text-align: right;font-weight: bold;}
+table.register td{padding: 5px;text-align: left;}
+
+.error_field{ font-family: Verdana, Arial, sans-serif; font-size: 11px; background-color: #ffb3b5; padding: 5 0 5 0;}
+.success_field{ font-family: Verdana, Arial, sans-serif; font-size: 11px; background-color: #99FF00; padding: 5 0 5 0;}
+.inputRequirement{font:normal 10px/20px Verdana; padding: 3px; color: red;}
+.orderEdit { font-family : Verdana, Arial, sans-serif; font-size : 10px; color: #70d250; text-decoration: underline; }
+.bigtitle{font-family: Verdana, Arial, sans-serif;font-size: 20px;font-weight: bold;color: #333399;}
+.tumlum1{font:normal 16px/28px Tahoma;color: #000000;}
+/* --------------------------------------------------------------------------------------------- */
+/* FONT SIZE
+/* --------------------------------------------------------------------------------------------- */
+.f5{font-size: 5pt !important;}
+.f6{font-size: 6pt !important;}
+.f7{font-size: 7pt !important;}
+.f8{font-size: 8pt !important;}
+.f9{font-size: 9pt !important;}
+.f10{font-size: 10pt !important;}
+.f11{font-size: 11pt !important;}
+.f12{font-size: 12pt !important;}
+.f13{font-size: 13pt !important;}
+.f14{font-size: 14pt !important;}
+.f15{font-size: 15pt !important;}
+.f16{font-size: 16pt !important;}
+.f17{font-size: 17pt !important;}
+.f18{font-size: 18pt !important;}
+.f19{font-size: 19pt !important;}
+.f20{font-size: 20pt !important;}
+.fb{font-weight: bold;}
+.fi{font-style: italic;}
+/* --------------------------------------------------------------------------------------------- */
+/* WIDTH
+/* --------------------------------------------------------------------------------------------- */
+.w20{width: 20px !important}
+.w30{width: 30px !important}
+.w40{width: 40px !important}
+.w50{width: 50px !important}
+.w60{width: 60px !important}
+.w70{width: 70px !important}
+.w80{width: 80px !important}
+.w90{width: 90px !important}
+.w100{width: 100px !important}
+.w110{width: 110px !important}
+.w120{width: 120px !important}
+.w130{width: 130px !important}
+.w140{width: 140px !important}
+.w150{width: 150px !important}
+.w160{width: 160px !important}
+.w170{width: 170px !important}
+.w180{width: 180px !important}
+.w190{width: 190px !important}
+.w200{width: 200px !important}
+.w220{width: 220px !important}
+.w240{width: 240px !important}
+.w260{width: 260px !important}
+.w280{width: 280px !important}
+.w300{width: 300px !important}
+.w320{width: 320px !important}
+.w340{width: 340px !important}
+.w360{width: 360px !important}
+.w380{width: 380px !important}
+.w400{width: 400px !important}
+.w420{width: 420px !important}
+.w450{width: 450px !important}
+.w480{width: 480px !important}
+.w500{width: 500px !important}
+.w550{width: 550px !important}
+.w600{width: 600px !important}
+.w10p{width: 10% !important}
+.w20p{width: 20% !important}
+.w30p{width: 30% !important}
+.w50p{width: 50% !important}
+.w100p{width: 100% !important}
+/* --------------------------------------------------------------------------------------------- */
+/* HEIGHT
+/* --------------------------------------------------------------------------------------------- */
+.h100{height: 100px !important}
+.h130{height: 130px !important}
+.h150{height: 130px !important}
+.h200{height: 200px !important}
+.h300{height: 300px !important}
+.h400{height: 400px !important}
+.h100p{height: 100% !important}
+/* --------------------------------------------------------------------------------------------- */
+/* TEXT ALIGN
+/* --------------------------------------------------------------------------------------------- */
+.t-left{text-align: left !important;}
+.t-right{text-align: right !important;}
+.t-center{text-align: center !important;}
+.t-bold{font-weight: bold;}
+
+.v-top{vertical-align: top !important;}
+.v-center{vertical-align: middle !important;}
+.v-bottom{vertical-align: bottom !important;}
+/* --------------------------------------------------------------------------------------------- */
+/* FLOAT
+/* --------------------------------------------------------------------------------------------- */
+.floatLeft{float: left !important;}
+/* --------------------------------------------------------------------------------------------- */
+/* BORDER
+/* --------------------------------------------------------------------------------------------- */
+.border1{border: 1px solid red !important;}
+.flat
+{
+  border: 1px solid #666666 !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+}
+/* --------------------------------------------------------------------------------------------- */
+/* CURSOR
+/* --------------------------------------------------------------------------------------------- */
+.cursorDefault { cursor:default !important; }
+.cursorMove { cursor:move !important; }
+.cursorPointer { cursor:pointer !important; }
+a.saleofflink{text-decoration: none;color:#333399;}
+/* --------------------------------------------------------------------------------------------- */
+/* BACKGROUND
+/* --------------------------------------------------------------------------------------------- */
+.bg-red{ background-color: red !important; }
+.bg-inner{ background-color: red !important; }
+/* --------------------------------------------------------------------------------------------- */
+/* FORE
+/* --------------------------------------------------------------------------------------------- */
+.fore-white{ color:white !important; }
+.fore-black{ color:black !important; }
+.fore-red{ color:red !important; }
+.fore-red1{ color:#FF8000 !important; }
+.fore-bulete{ color:#333399 !important; }

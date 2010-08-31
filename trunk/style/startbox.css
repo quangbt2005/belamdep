@@ -1,0 +1,243 @@
+#start_picture {
+  width: 530px;
+  height: 325px;
+  position: relative;
+  /*margin-top: 20px;
+  margin-bottom: 10px;*/
+	margin: 20 auto;
+
+  /*border: 1px solid #970086;*/
+  /*float: left;*/
+ }
+
+
+#maxbox {
+top:0px;
+left:100px;
+/* border: 1px solid #000000; */
+width: 179px;
+height: 326px;
+position: absolute;
+background-color:transparent;
+z-index:10;
+ }
+
+
+////////////////////
+// box_1_1
+////////////////////
+
+#box_1_1 {
+z-index:3;}
+
+#box_1_1 a {
+/* size: 114x74 */
+top: 0px;
+left: 0px;
+position: absolute;
+color:#000000;
+background: url(/images/startbox/box_114_74_green.gif) 0 0 no-repeat;
+text-align: center;
+display:block;
+/* padding: 5px 10px; */
+width: 114px;
+height: 74px;
+/* border:1px solid black; */
+}
+
+#box_1_1 a:hover {
+color:black;
+background: url(/images/startbox/box_114_74_red.gif) 0 0 no-repeat;
+/* background:#ddd8b7; */
+}
+
+////////////////////
+// box_1_2
+////////////////////
+
+#box_1_2 {
+z-index:3;}
+
+#box_1_2 a {
+top:84px; left:0px;
+position: absolute;
+/* size: 114x74 */
+color:#000000;
+background: url(/images/startbox/box_114_74_green.gif) 0 0 no-repeat;
+text-align: center;
+display:block;
+width: 114px;
+height: 74px;
+/* border:1px solid black; */
+}
+
+#box_1_2 a:hover {
+color:black;
+background: url(/images/startbox/box_114_74_red.gif) 0 0 no-repeat;
+/* background:#ddd8b7; */
+}
+
+
+////////////////////
+// box_1_3
+////////////////////
+
+#box_1_3 {
+z-index:3;}
+
+#box_1_3 a {
+top:168px; left:0px;
+position: absolute;
+/* size: 114x74 */
+color:#000000;
+background: url(/images/startbox/box_114_74_green.gif) 0 0 no-repeat;
+text-align: center;
+display:block;
+width: 114px;
+height: 74px;
+/* border:1px solid black; */
+}
+
+#box_1_3 a:hover {
+color:black;
+background: url(/images/startbox/box_114_74_red.gif) 0 0 no-repeat;
+/* background:#ddd8b7; */
+}
+
+
+////////////////////
+// box_1_4
+////////////////////
+
+#box_1_4 {
+z-index:3;}
+
+#box_1_4 a {
+top:252px; left:0px;
+position: absolute;
+/* size: 114x74 */
+color:#000000;
+background: url(/images/startbox/box_114_74_green.gif) 0 0 no-repeat;
+text-align: center;
+display:block;
+width: 114px;
+height: 74px;
+/* border:1px solid black; */
+}
+
+#box_1_4 a:hover {
+color:black;
+background: url(/images/startbox/box_114_74_red.gif) 0 0 no-repeat;
+/* background:#ddd8b7; */
+}
+
+
+////////////////////
+// box_2_1
+////////////////////
+
+#box_2_1 {
+z-index:3;}
+
+#box_2_1 a {
+top:0x; left:240px;
+position: absolute;
+/* size: 168x158 */
+color:#000000;
+background: url(/images/startbox/box_168_158_green.gif) 0 0 no-repeat;
+text-align: center;
+display:block;
+width: 168px;
+height: 158px;
+/* border:1px solid black; */
+}
+
+#box_2_1 a:hover {
+color:black;
+background: url(/images/startbox/box_168_158_red.gif) 0 0 no-repeat;
+/* background:#ddd8b7; */
+}
+
+
+////////////////////
+// box_3_1
+////////////////////
+
+#box_3_1 {
+z-index:3;}
+
+#box_3_1 a {
+/* size: 114x74 */
+top: 0px;
+left: 420px;
+position: absolute;
+color:#000000;
+background: url(/images/startbox/box_114_74_green.gif) 0 0 no-repeat;
+text-align: center;
+display:block;
+/* padding: 5px 10px; */
+width: 114px;
+height: 74px;
+/* border:1px solid black; */
+}
+
+#box_3_1 a:hover {
+color:black;
+background: url(/images/startbox/box_114_74_red.gif) 0 0 no-repeat;
+/* background:#ddd8b7; */
+}
+
+////////////////////
+// box_3_2
+////////////////////
+
+#box_3_2 {
+z-index:3;}
+
+#box_3_2 a {
+top:84px; left:420px;
+position: absolute;
+/* size: 114x74 */
+color:#000000;
+background: url(/images/startbox/box_114_74_green.gif) 0 0 no-repeat;
+text-align: center;
+display:block;
+width: 114px;
+height: 74px;
+/* border:1px solid black; */
+}
+
+#box_3_2 a:hover {
+color:black;
+background: url(/images/startbox/box_114_74_red.gif) 0 0 no-repeat;
+/* background:#ddd8b7; */
+}
+
+
+////////////////////
+// box_2_2
+////////////////////
+
+#box_2_2 {
+z-index:3;}
+
+#box_2_2 a {
+top:168px; left:240px;
+position: absolute;
+/* size: 292x158 */
+color:#000000;
+background: url(/images/startbox/box_292_158_green.gif) 0 0 no-repeat;
+text-align: center;
+display:block;
+width: 292px;
+height: 158px;
+/* border:1px solid black; */
+}
+
+#box_2_2 a:hover {
+color:black;
+background: url(/images/startbox/box_292_158_red.gif) 0 0 no-repeat;
+/* background:#ddd8b7; */
+}
+
+

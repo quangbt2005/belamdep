@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond  %{REQUEST_URI} !product_thumb.php
+RewriteCond  %{REQUEST_URI} !captcha.php
+RewriteCond  %{REQUEST_URI} !favico.ico
+
+RewriteRule !\.(js|ico|txt|gif|jpg|png|bmp|css)$ index.php

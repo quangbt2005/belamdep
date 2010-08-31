@@ -1,0 +1,9 @@
+<HDML VERSION="3.0" PUBLIC="TRUE" MARKABLE="TRUE">
+<DISPLAY TITLE="System Error : Process Interrupted.">
+---------------------<BR>
+The error occurred and processing was interrupted.<BR>
+---------------------<BR>
+プログラムにて処理続行不可能なエラーが検出された為、強制終了されました。<BR><BR>
+{{ PHP_ERROR_MESSAGE }}
+</DISPLAY>
+</HDML>
