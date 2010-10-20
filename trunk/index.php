@@ -5,18 +5,18 @@ error_reporting(0);
 require_once( "includes/init.inc" );
 require_once( "includes/mysql.inc" );
 // ---------------------------------------------------------------------------------------------- //
-$Response = Parse__URL();
-// pd($Request);
-if($Response['is_ajax']==FALSE) {
-  $layout  = Layout( $Response["response_module"] );
+$Request = Parse__URL();
+// p($Request);
+if($Request['is_ajax']==FALSE) {
+  $layout  = Layout( $Request["response_module"] );
   // -------------------------------------------------------------------------------------------- //
-  require( $Response['header_script'] );
-  require( $Response['left_script'] );
-  require( $Response['center_script'] );
-  require( $Response['right_script'] );
-  require( $Response['footer_script'] );
+  require( $Request['header_script'] );
+  require( $Request['left_script'] );
+  require( $Request['center_script'] );
+  require( $Request['right_script'] );
+  require( $Request['footer_script'] );
 
-  $smarty->assign( 'title',      $Response['page_title'] );
+  $smarty->assign( 'title',      $Request['page_title'] );
   $smarty->assign( 'header',     $header );
   $smarty->assign( 'left_col',   $left_col );
   $smarty->assign( 'center_col', $center_col );
@@ -26,6 +26,6 @@ if($Response['is_ajax']==FALSE) {
   $smarty->display( $layout );
 }
 else {
-  require( $Response['center_script'] );
+  require( $Request['center_script'] );
 }
 ?>

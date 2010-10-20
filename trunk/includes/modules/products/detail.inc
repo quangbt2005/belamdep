@@ -8,7 +8,7 @@ require_once( FUNCTIONS_PATH . "products/products_db.inc" );
 // ---------------------------------------------------------------------------------------------- //
 $product_id = $Request['parameters'][":productid"];
 $product = LoadProduct($product_id);
-
+// pd($product_id);
 // ---------------------------------------------------------------------------------------------- //
 // $current_cat_id has been loaded in leftmenu script ( leftmenu/menu1.inc )
 // ---------------------------------------------------------------------------------------------- //
