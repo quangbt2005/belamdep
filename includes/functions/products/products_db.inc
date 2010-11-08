@@ -135,7 +135,7 @@ function Count_Products( $category_id )
   return 0 ;
 }
 // ---------------------------------------------------------------------------------------------- //
-// Count products by category
+// Count products by category (not including subcategories of category)
 // ---------------------------------------------------------------------------------------------- //
 function Count_Products_Exactly( $category_id )
 {
@@ -165,7 +165,32 @@ function Count_Products_Exactly( $category_id )
   return 0 ;
 }
 // ---------------------------------------------------------------------------------------------- //
-// Load products by cadtegory
+// Load all products in category (not including subcategories of category)
+// ---------------------------------------------------------------------------------------------- //
+function List_Product_By_Category_Exactly( $category_id, $offset=0,
+                                           $limit=DEFAULT_PAGER_LIMIT )
+{
+  if( empty( $category_id ) )
+  {
+    return array();
+  }
+
+  $category_id = P_SQL_Quote_NumberOnly( $category_id );
+
+  $query = 'SELECT DISTINCT p.products_id,p.products_image,pd.products_name,'
+               . 's.specials_new_products_price special_price,p.products_price '
+               . 'FROM ' . TBL_PRODUCTS . ' p LEFT JOIN ' . TBL_SALEOFF
+               . ' s ON (p.products_id=s.products_id), '
+               . TBL_PRO_DES . ' pd, ' . TBL_PRO2CAT . ' p2c, ' . TBL_CAT
+               . ' c WHERE p.products_id=p2c.products_id AND p2c.categories_id=c.categories_id'
+               . ' AND c.categories_id=' . $category_id
+               . " AND p.products_id=pd.products_id AND pd.language_id='" . LANGUAGE_ID . "'"
+               . ' ORDER BY p.products_date_added DESC LIMIT ' . $offset . ',' . $limit;
+// pd($query);
+  return P_MySQL_Real_SELECT_GetArrayIndex($query);
+}
+// ---------------------------------------------------------------------------------------------- //
+// Load all products in category and subcategories of category
 // ---------------------------------------------------------------------------------------------- //
 function List_Product_By_Category( $category_id, $offset=0,
                                    $limit=DEFAULT_PAGER_LIMIT )

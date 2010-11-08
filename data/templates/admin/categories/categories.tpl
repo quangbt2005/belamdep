@@ -1,21 +1,13 @@
 <script languge="javascript">
 {literal}
-/*
 $(document).ready(function() {
   $("#tree").dynatree({
       onActivate: function(dtnode) {
-        $("#echoActive").text(dtnode.data.title);
-        if( dtnode.data.url )
-          window.open(dtnode.data.url, dtnode.data.target);
-      }
-    });
-});
-*/
-$(document).ready(function() {
-  $("#tree").dynatree({
-      onActivate: function(dtnode) {
-      	update_sub_categories_tree(28);
-      }
+        update_sub_categories_tree(dtnode.data.key);
+      },
+      onLazyRead: function(dtnode){
+        alert(dtnode.data.key);
+      },
     });
 });
 {/literal}
@@ -29,27 +21,19 @@ $(document).ready(function() {
     </div>
     <div class="content">
       <h1>Categories</h1>
-      <div id="tree" style="width: 40%;overflow: auto;float: left;">
-        <ul>
-          {foreach from=$Tree item=cat}
-	      <li data="key: '{$cat.categories_id}'" class="folder">{$cat.categories_name}
-	      {if $cat.childs != null}
-            <ul>
-              {foreach from=$cat.childs item=childcat}
-              <li data="key: '{$cat.categories_id}'" class="folder">{$childcat.categories_name}</li>
-              {/foreach}
-            </ul>
-          {/if}
-          </li>
-          {/foreach}
-        </ul>
+      <div id="tree" style="width: 30%;overflow: auto;float: left;">
+        {$Tree}
       </div>
-      <div style="float: left;margin-left: 1%;width: 59%;margin-top:-50px;">
-      	<div class="header1" id="echoActive">Danh mục con</div>
-      	  <div class="blu-container" style="padding: 10px;">
-      	    <div id="sub_cat_con"></div>
-      	  </div>
+      <div style="float: left;margin-left: 1%;width: 69%;margin-top:-50px;">
+        <div class="header1">
+          <div style="float: left">Danh sách sản phẩm</div>
+          <div align="right"><input type="Button" value="Thêm sản phẩm"></div>
+        </div>
+        <div class="blu-container" style="padding: 10px;height:450px;overflow:auto;">
+          <div id="sub_cat_con"></div>
+        </div>
       </div>
+      <div style="clear: both">&nbsp;</div>
     </div>
   </div>
 </div>

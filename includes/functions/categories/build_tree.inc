@@ -12,47 +12,54 @@ function BuildCategoryTree()
 
   $Tree = array();
   $List = List_All_Category();
+  $ID_List = array();
 
-  while(count($List)>0 && $overflow<150){
-    foreach($List as $key => $value){
-      if($value['parent_id']==0){
-      	$Tree[$value['categories_id']] = $value;
-        unset($List[$key]);
-      } else {
-      	$found = ArrangeSubCat($Tree, $value);
-        if($found){
-          unset($List[$key]);
+  for($i=0;$i<count($List);$i++){
+    $Tree[$List[$i]['categories_id']] = &$List[$i];
+    $ID_List[] = $List[$i]['categories_id'];
+  }
+
+  for($i=0;$i<count($ID_List);$i++){
+    $id = $ID_List[$i];
+    $parent_of_id = $Tree[$id]['parent_id'];
+    if(!empty($parent_of_id)){
+      $Tree[$parent_of_id]['childs'][] = &$Tree[$id];
+    }
+  }
+
+  for($i=0;$i<count($ID_List);$i++){
+    $id = $ID_List[$i];
+    $parent_of_id = $Tree[$id]['parent_id'];
+    if(!empty($parent_of_id)){
+      unset($Tree[$id]);
+    }
+  }
+
+  reset($Tree);
+  $pointer = $Tree;
+  $stack   = array();
+  $html = "<ul>\n";
+
+  while(!empty($pointer)){
+    do{
+      $cat = current($pointer);
+
+      if(!empty($cat)){
+        $html .= sprintf("<li data=\"key: '%s'\" class=\"folder\">%s\n", $cat['categories_id'], $cat['categories_name']);
+        if(isset($cat['childs'])){
+          next($pointer);
+          $stack[] = $pointer;
+          $stack[] = $cat['childs'];
+          $html .= "<ul>\n";
+          break;
         }
       }
-    }
-    $overflow++;
-  }
+    } while (next($pointer));
+    if(!(current($pointer))) $html .= "</ul>\n";
 
-  return $Tree;
-}
-// ---------------------------------------------------------------------------------------------- //
-//
-// ---------------------------------------------------------------------------------------------- //
-function ArrangeSubCat(&$Tree, $cat)
-{
-  $__queue = array(&$Tree);
-  $pointer = 0;
-  while($pointer < count($__queue)){
-    $root = &$__queue[$pointer];
-    reset($root);
-    while(list($key,$value)=each($root)){
-      if((int)$key==(int)$cat['parent_id']){
-        $root[$key]['childs'][$cat['categories_id']] = $cat;
-        return true;
-      }
-      if(isset($value['childs'])){
-        $__queue[] = &$value['childs'];
-      }
-    }
-    $pointer++;
+    $pointer = array_pop($stack);
   }
-
-  return false;
+  return $html;
 }
 // ---------------------------------------------------------------------------------------------- //
 //

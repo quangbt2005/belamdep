@@ -42,7 +42,9 @@ $Routes = array(
       "/admin/home"                       => array('module'=>'admin',     'page'=>'home'),
       "/admin/categories"                 => array('module'=>'admin',     'page'=>'categories'),
       "/admin/categories/sub/:parentid"   => array('module'=>'admin',     'page'=>'getsubcategories'),
-      "/admin/categories/add"             => array('module'=>'admin2',    'page'=>'addcategory'),
+      "/admin/categories/add/:parentid"   => array('module'=>'adminpopup','page'=>'addcategory'),
+      "/admin/category/:catid/products"   => array('module'=>'admin',     'page'=>'listproductsincategory'),
+      "/admin/products/add/:catid"        => array('module'=>'adminpopup','page'=>'addproduct'),
 );
 // ---------------------------------------------------------------------------------------------- //
 // MODULES MAP
@@ -104,9 +106,11 @@ $Module_Map = array(
           "home"             => MODULES_PATH . "admin/home/home.inc",
           "categories"       => MODULES_PATH . "admin/categories/categories.inc",
           "getsubcategories" => MODULES_PATH . "admin/categories/getsubcategories.inc",
+          "listproductsincategory" => MODULES_PATH . "admin/categories/listproductsincategory.inc",
       ),
-      "admin2"      => array(
+      "adminpopup"      => array(
           "addcategory"      => MODULES_PATH . "admin/categories/addcategory.inc",
+          "addproduct"       => MODULES_PATH . "admin/products/addproduct.inc",
       )
 );
 // ---------------------------------------------------------------------------------------------- //
@@ -118,6 +122,7 @@ $Ajax_Map = array(
       ),
       "admin"       => array(
           "getsubcategories",
+          "listproductsincategory",
       )
 );
 // ---------------------------------------------------------------------------------------------- //
@@ -143,7 +148,7 @@ $Layout_Map = array(
       "search"      => "layouts/layout03.tpl",
       "news"        => "layouts/layout03.tpl",
       "admin"       => "admin/layouts/layout01.tpl",
-      "admin2"      => "admin/layouts/layout02.tpl",
+      "adminpopup"  => "admin/layouts/popup.tpl",
 );
 // ---------------------------------------------------------------------------------------------- //
 // LEFT MENU
@@ -214,6 +219,7 @@ $Footer_Map = array(
 // ---------------------------------------------------------------------------------------------- //
 $Title_Map = array(
       "default"     => "Be lam dep",
-      "admin"       => "Be Lam Dep - Quan Tri"
+      "admin"       => "Be Lam Dep - Quan Tri",
+      "adminpopup"  => "Be Lam Dep - Quan Tri",
 );
 ?>
