@@ -7,7 +7,7 @@ require_once( FUNCTIONS_PATH . "products/products_db.inc" );
 // ---------------------------------------------------------------------------------------------- //
 //
 // ---------------------------------------------------------------------------------------------- //
-if(! Check_Admin_Ajax()) return;
+if(! Check_Admin_Ajax()) exit;
 
 $cat_id        = $Request['parameters'][':catid'];
 $Products_List = List_Product_By_Category_Exactly($cat_id);

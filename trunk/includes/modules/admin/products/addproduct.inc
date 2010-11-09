@@ -8,6 +8,7 @@ require_once( FUNCTIONS_PATH . "DB.inc" );
 // ---------------------------------------------------------------------------------------------- //
 //
 // ---------------------------------------------------------------------------------------------- //
+Check_Admin();
 $category_id = $Request['parameters'][':catid'];
 $errors = array();
 
@@ -29,7 +30,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   if(count($errors) <= 0){
     $basefilename = basename($_FILES['txtProductImage']['name']);
-    // $tmp_upload = UPLOADS . $basefilename;
     $upload_dir = SYS_IMAGES_PATH . $basefilename;
     if(!empty($basefilename)){
       move_uploaded_file($_FILES['txtProductImage']['tmp_name'], $upload_dir);
@@ -59,10 +59,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     exit;
   }
 } else {
-	if($_SESSION['flash']['insert_product_ok'] == '1'){
+  if($_SESSION['flash']['insert_product_ok'] == '1'){
     $smarty->assign('insert_product_ok', '1');
     $_SESSION['flash']['insert_product_ok'] = '0';
-	}
+  }
 }
 
 $html_select_categories = create_html_select_categories($category_id);
