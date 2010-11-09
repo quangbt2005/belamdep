@@ -3,11 +3,7 @@ function P_Word_Check_getString( $Type )
 {
  return P_Check_getString( $Type );
 }
-
 /*********************************************************************/
-/*    �Ք���C�u�����֐��Q                                           */
-/*********************************************************************/
-
 switch( strtoupper( mb_internal_encoding( ) ) )
 {
  case "SJIS"     :

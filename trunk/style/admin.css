@@ -117,3 +117,59 @@ li.folder
 	background: url("/images/ltFld.gif") no-repeat scroll left center transparent;
 	padding: 5px 0 5px 22px;
 }
+/* --------------------------------------------------------------------------------------------- */
+/* WIDTH
+/* --------------------------------------------------------------------------------------------- */
+.w20{width: 20px !important}
+.w30{width: 30px !important}
+.w40{width: 40px !important}
+.w50{width: 50px !important}
+.w60{width: 60px !important}
+.w70{width: 70px !important}
+.w80{width: 80px !important}
+.w90{width: 90px !important}
+.w100{width: 100px !important}
+.w110{width: 110px !important}
+.w120{width: 120px !important}
+.w130{width: 130px !important}
+.w140{width: 140px !important}
+.w150{width: 150px !important}
+.w160{width: 160px !important}
+.w170{width: 170px !important}
+.w180{width: 180px !important}
+.w190{width: 190px !important}
+.w200{width: 200px !important}
+.w220{width: 220px !important}
+.w240{width: 240px !important}
+.w260{width: 260px !important}
+.w280{width: 280px !important}
+.w300{width: 300px !important}
+.w320{width: 320px !important}
+.w340{width: 340px !important}
+.w360{width: 360px !important}
+.w380{width: 380px !important}
+.w400{width: 400px !important}
+.w420{width: 420px !important}
+.w450{width: 450px !important}
+.w480{width: 480px !important}
+.w500{width: 500px !important}
+.w550{width: 550px !important}
+.w600{width: 600px !important}
+.w10p{width: 10% !important}
+.w20p{width: 20% !important}
+.w30p{width: 30% !important}
+.w50p{width: 50% !important}
+.w100p{width: 100% !important}
+/* --------------------------------------------------------------------------------------------- */
+/* TEXT ALIGN
+/* --------------------------------------------------------------------------------------------- */
+.t-left{text-align: left !important;}
+.t-right{text-align: right !important;}
+.t-center{text-align: center !important;}
+.t-bold{font-weight: bold;}
+
+.v-top{vertical-align: top !important;}
+.v-center{vertical-align: middle !important;}
+.v-bottom{vertical-align: bottom !important;}
+/* --------------------------------------------------------------------------------------------- */
+.error_field{ font-family: Verdana, Arial, sans-serif; font-size: 11px; background-color: #ffb3b5; padding: 5 0 5 0;}

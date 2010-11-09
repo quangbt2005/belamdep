@@ -33,6 +33,7 @@ define( 'JSCRIPTS_PATH',              WEB_ROOT . 'javascripts/' );
 define( 'STYLES_PATH',                WEB_ROOT . 'styles/' );
 
 define( 'SYS_IMAGES_PATH',            SYS_ROOT . 'images/' );
+define( 'SYS_UPLOAD_PATH',            SYS_ROOT . 'uploads/' );
 
 define( 'DEFAULT_MODULE',             'home' );
 define( 'DEFAULT_PAGE',               'default' );
