@@ -38,6 +38,6 @@ function P_String_Check( $In, $Flg, $Ws, $Check )
 @include_once( LIB_PATH . "P_Check/P_Word_Check_Alpha_Function.inc" );
 @include_once( LIB_PATH . "P_Check/P_Word_Check_Beta_Function.inc" );
 @include_once( LIB_PATH . "P_Mail/P_Mail_Check_P_Function.inc" );
-include_once( "P_Mail/P_Mail_Check_P2_Function.inc" ); /*V002:Add!!*/
+@include_once( "P_Mail/P_Mail_Check_P2_Function.inc" ); /*V002:Add!!*/
 
 ?>
