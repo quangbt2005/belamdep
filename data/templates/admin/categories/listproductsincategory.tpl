@@ -10,9 +10,21 @@
   <tr onMouseOver="this.style.backgroundColor='#71FFB8';" onMouseOut="this.style.backgroundColor='transparent';">
     <td>{$product.products_name}</td>
     <td align="right">100.000</td>
-    <td align="right">{$product.products_price}</td>
-    <td align="right">{$product.special_price}</td>
-    <td><input type="button" value="Xóa"></td>
+    <td align="right">{number_format number=$product.products_price}</td>
+    <td align="right">{number_format number=$product.special_price}</td>
+    <td><input type="button" value="Xóa" onclick="deleteProduct({$product.products_id});"></td>
   </tr>
   {/foreach}
 </table>
+{literal}
+<script type="text/javascript" language="javascript">
+function deleteProduct(product_id){
+  var category_id = $("#tree").dynatree("getActiveNode").data.key;
+  if(category_id != null && product_id != null && category_id != '' && product_id != ''){
+    $.get("/admin/products/delete/" + product_id + "/" + category_id, function(data){
+      update_sub_categories_tree(category_id);
+    });
+  }
+}
+</script>
+{/literal}

@@ -5,7 +5,9 @@ $(document).ready(function() {
       onActivate: function(dtnode) {
         update_sub_categories_tree(dtnode.data.key);
       }
-    });
+  });
+  $("#tree").dynatree("getRoot").childList[0].focus();
+  update_sub_categories_tree($("#tree").dynatree("getRoot").childList[0].data.key);
 });
 {/literal}
 </script>
@@ -17,11 +19,19 @@ $(document).ready(function() {
       <h1 class="bkg_dashboard">Categories</h1>
     </div>
     <div class="content">
-      <h1>Categories</h1>
-      <div id="tree" style="width: 30%;overflow: auto;float: left;">
-        {$Tree}
+      <div style="float: left;width: 30%;border: 0px solid #cccccc">
+        <!-- <h1>Categories</h1> -->
+        <div align="left">
+          <input type="button" value="Thêm danh mục" onclick="">&nbsp;&nbsp;
+          <input type="button" value="Sửa danh mục" onclick="">&nbsp;&nbsp;
+          <input type="button" value="Xóa danh mục" onclick="">
+        </div>
+        <div id="tree" style="overflow: auto;float: left;">
+          {$Tree}
+        </div>
       </div>
-      <div style="float: left;margin-left: 1%;width: 69%;margin-top:-50px;">
+      <!-- <div style="float: left;margin-left: 1%;width: 69%;margin-top:-50px;"> -->
+      <div style="float: left;margin-left: 1%;width: 69%;">
         <div class="header1">
           <div style="float: left">Danh sách sản phẩm</div>
           <div align="right"><input type="Button" value="Thêm sản phẩm" onclick="openAddProductPopup();"></div>
@@ -56,5 +66,11 @@ function reloadProductList(category_id)
       update_sub_categories_tree(dtnode_id);
     }
   }
+}
+function addCategory(){
+}
+function deleteCategory(){
+}
+function editCategory(){
 }
 </script>{/literal}
