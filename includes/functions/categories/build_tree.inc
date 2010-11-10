@@ -39,26 +39,28 @@ function BuildCategoryTree()
   $pointer = $Tree;
   $stack   = array();
   $html = "<ul>\n";
+$j = 0;
+  while(!empty($pointer) && $j<10){
+    if(is_array($pointer)){
+      do{
+        $cat = current($pointer);
 
-  while(!empty($pointer)){
-    do{
-      $cat = current($pointer);
-
-      if(!empty($cat)){
-        $html .= sprintf("<li data=\"key: '%s'\" class=\"folder\">%s\n", $cat['categories_id'], $cat['categories_name']);
-        if(isset($cat['childs'])){
-          next($pointer);
-          $stack[] = $pointer;
-          $stack[] = $cat['childs'];
-          $html .= "<ul>\n";
-          break;
+        if(!empty($cat)){
+          $html .= sprintf("<li data=\"key: '%s'\" class=\"folder\">%s\n", $cat['categories_id'], $cat['categories_name']);
+          if(isset($cat['childs'])){
+            if(next($pointer)) $stack[] = $pointer; else $stack[] = '</ul>';
+            $stack[] = $cat['childs'];
+            $html .= "<ul>\n";
+            break;
+          }
         }
-      }
-    } while (next($pointer));
-    if(!(current($pointer))) $html .= "</ul>\n";
-
+      } while (next($pointer));
+      if(!(current($pointer))) $html .= "</ul>\n";
+    } else {$html .= "</ul>\n";}
+$j++;
     $pointer = array_pop($stack);
   }
+pd($html);
   return $html;
 }
 // ---------------------------------------------------------------------------------------------- //

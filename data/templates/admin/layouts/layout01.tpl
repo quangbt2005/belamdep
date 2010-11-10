@@ -4,15 +4,17 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="robots" content="noindex" />
-  <link rel="StyleSheet" href="/style/admin.css" type="text/css" />
-  <link rel="StyleSheet" href="/style/jquery-superfish/superfish.css" type="text/css" />
-  <link href='/style/jquery-treeview/ui.dynatree.css' rel='stylesheet' type='text/css'>
+  <link rel="StyleSheet" type="text/css" href="/style/admin.css" />
+  <link rel="StyleSheet" type="text/css" href="/style/jquery-superfish/superfish.css" />
+  <link rel="stylesheet" type="text/css" href="/style/jquery-treeview/ui.dynatree.css" />
   <script type="text/javascript" src="/jscripts/jquery/jquery-1.4.2.js"></script>
   <script type="text/javascript" src="/jscripts/jquery/hoverIntent.js"></script>
   <script type="text/javascript" src="/jscripts/jquery/superfish.js"></script>
   <script type="text/javascript" src="/jscripts/jquery/jquery.cookie.js"></script>
   <script type="text/javascript" src="/jscripts/jquery/ui.core.js"></script>
   <script type='text/javascript' src="/jscripts/jquery/jquery.dynatree.js"></script>
+  <script type="text/javascript" src="/jscripts/jquery/ui.draggable.js"></script>
+  <script type="text/javascript" src="/jscripts/jquery/ui.droppable.js"></script>
   <script type="text/javascript" src="/jscripts/admin_common.js"></script>
   <link rel="shortcut icon" href="/favico.ico" type="image/x-icon" />
   <title>{$title}</title>

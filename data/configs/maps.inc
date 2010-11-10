@@ -6,45 +6,46 @@
 // ROUTE
 // ---------------------------------------------------------------------------------------------- //
 $Routes = array(
-      "/taikhoan"                         => array('module'=>'account',   'page'=>'manage'),
-      "/taikhoan/thongtin"                => array('module'=>'account',   'page'=>'edit_info'),
-      "/taikhoan/matkhau"                 => array('module'=>'account',   'page'=>'edit_pass'),
-      "/taikhoan/dangky"                  => array('module'=>'account',   'page'=>'register'),
-      "/taikhoan/dangky/thanhcong"        => array('module'=>'account',   'page'=>'register_success'),
-      "/taikhoan/donhang"                 => array('module'=>'account',   'page'=>'last_ordered'),
-      "/dangnhap"                         => array('module'=>'logon',     'page'=>'login'),
-      "/dangxuat"                         => array('module'=>'logon',     'page'=>'logout'),
-      "/quenmatkhau"                      => array('module'=>'logon',     'page'=>'resetpass'),
-      "/sanpham/giamgia/danhsach"         => array('module'=>'products',  'page'=>'saleoff_list'),
-      "/sanpham/giamgia/danhsach/:page"   => array('module'=>'products',  'page'=>'saleoff_list'),
-      "/sanpham/danhsach/:catid/:page"    => array('module'=>'products',  'page'=>'list'),
-      "/sanpham/danhsach/:catid"          => array('module'=>'products',  'page'=>'list'),
-      "/sanpham/:productid/chitiet"       => array('module'=>'products',  'page'=>'detail'),
-      "/sanpham/giamgia/ajax"             => array('module'=>'products',  'page'=>'random1saleoff'),
-      "/sanpham/:id/order"                => array('module'=>'cart',      'page'=>'order'),
-      "/giohang/xem"                      => array('module'=>'cart',      'page'=>'view'),
-      "/giohang/capnhat"                  => array('module'=>'cart',      'page'=>'update'),
-      "/thanhtoan"                        => array('module'=>'cart',      'page'=>'checkout1'),
-      "/thanhtoan/xacnhan"                => array('module'=>'cart',      'page'=>'checkout2'),
-      "/thanhtoan/hoantat"                => array('module'=>'cart',      'page'=>'checkout3'),
-      "/lienhe"                           => array('module'=>'helper',    'page'=>'contact'),
-      "/lienhe/thanhcong"                 => array('module'=>'helper',    'page'=>'contact_success'),
-      "/huongdanmuahang"                  => array('module'=>'helper',    'page'=>'buyinghelper'),
-      "/huongdanthanhtoan"                => array('module'=>'helper',    'page'=>'checkouthelper'),
-      "/timkiem"                          => array('module'=>'search',    'page'=>'search'),
-      "/timkiem/:key"                     => array('module'=>'search',    'page'=>'search'),
-      "/timkiem/:key/:page"               => array('module'=>'search',    'page'=>'search'),
-      "/tintuc"                           => array('module'=>'news',      'page'=>'index'),
-      "/tintuc/danhmuc/:catid"            => array('module'=>'news',      'page'=>'news_in_cat'),
-      "/tintuc/:id/chitiet"               => array('module'=>'news',      'page'=>'news_detail'),
+      "/taikhoan"                          => array('module'=>'account',   'page'=>'manage'),
+      "/taikhoan/thongtin"                 => array('module'=>'account',   'page'=>'edit_info'),
+      "/taikhoan/matkhau"                  => array('module'=>'account',   'page'=>'edit_pass'),
+      "/taikhoan/dangky"                   => array('module'=>'account',   'page'=>'register'),
+      "/taikhoan/dangky/thanhcong"         => array('module'=>'account',   'page'=>'register_success'),
+      "/taikhoan/donhang"                  => array('module'=>'account',   'page'=>'last_ordered'),
+      "/dangnhap"                          => array('module'=>'logon',     'page'=>'login'),
+      "/dangxuat"                          => array('module'=>'logon',     'page'=>'logout'),
+      "/quenmatkhau"                       => array('module'=>'logon',     'page'=>'resetpass'),
+      "/sanpham/giamgia/danhsach"          => array('module'=>'products',  'page'=>'saleoff_list'),
+      "/sanpham/giamgia/danhsach/:page"    => array('module'=>'products',  'page'=>'saleoff_list'),
+      "/sanpham/danhsach/:catid/:page"     => array('module'=>'products',  'page'=>'list'),
+      "/sanpham/danhsach/:catid"           => array('module'=>'products',  'page'=>'list'),
+      "/sanpham/:productid/chitiet"        => array('module'=>'products',  'page'=>'detail'),
+      "/sanpham/giamgia/ajax"              => array('module'=>'products',  'page'=>'random1saleoff'),
+      "/sanpham/:id/order"                 => array('module'=>'cart',      'page'=>'order'),
+      "/giohang/xem"                       => array('module'=>'cart',      'page'=>'view'),
+      "/giohang/capnhat"                   => array('module'=>'cart',      'page'=>'update'),
+      "/thanhtoan"                         => array('module'=>'cart',      'page'=>'checkout1'),
+      "/thanhtoan/xacnhan"                 => array('module'=>'cart',      'page'=>'checkout2'),
+      "/thanhtoan/hoantat"                 => array('module'=>'cart',      'page'=>'checkout3'),
+      "/lienhe"                            => array('module'=>'helper',    'page'=>'contact'),
+      "/lienhe/thanhcong"                  => array('module'=>'helper',    'page'=>'contact_success'),
+      "/huongdanmuahang"                   => array('module'=>'helper',    'page'=>'buyinghelper'),
+      "/huongdanthanhtoan"                 => array('module'=>'helper',    'page'=>'checkouthelper'),
+      "/timkiem"                           => array('module'=>'search',    'page'=>'search'),
+      "/timkiem/:key"                      => array('module'=>'search',    'page'=>'search'),
+      "/timkiem/:key/:page"                => array('module'=>'search',    'page'=>'search'),
+      "/tintuc"                            => array('module'=>'news',      'page'=>'index'),
+      "/tintuc/danhmuc/:catid"             => array('module'=>'news',      'page'=>'news_in_cat'),
+      "/tintuc/:id/chitiet"                => array('module'=>'news',      'page'=>'news_detail'),
       // ADMIN ---------------------------------------------------------------------------------- //
-      "/admin/login"                      => array('module'=>'admin',     'page'=>'login'),
-      "/admin/home"                       => array('module'=>'admin',     'page'=>'home'),
-      "/admin/categories"                 => array('module'=>'admin',     'page'=>'categories'),
-      "/admin/categories/sub/:parentid"   => array('module'=>'admin',     'page'=>'getsubcategories'),
-      "/admin/categories/add/:parentid"   => array('module'=>'adminpopup','page'=>'addcategory'),
-      "/admin/category/:catid/products"   => array('module'=>'admin',     'page'=>'listproductsincategory'),
-      "/admin/products/add/:catid"        => array('module'=>'adminpopup','page'=>'addproduct'),
+      "/admin/login"                         => array('module'=>'admin',     'page'=>'login'),
+      "/admin/home"                          => array('module'=>'admin',     'page'=>'home'),
+      "/admin/categories"                    => array('module'=>'admin',     'page'=>'categories'),
+      "/admin/categories/sub/:parentid"      => array('module'=>'admin',     'page'=>'getsubcategories'),
+      "/admin/categories/add/:parentid"      => array('module'=>'adminpopup','page'=>'addcategory'),
+      "/admin/categories/:catid/products"    => array('module'=>'admin',     'page'=>'listproductsincategory'),
+      "/admin/categories/:catid/move/:desid" => array('module'=>'admin',     'page'=>'movecategory'),
+      "/admin/products/add/:catid"           => array('module'=>'adminpopup','page'=>'addproduct'),
       "/admin/products/delete/:productid/:catid" => array('module'=>'admin','page'=>'deleteproduct'),
 );
 // ---------------------------------------------------------------------------------------------- //
@@ -109,6 +110,7 @@ $Module_Map = array(
           "getsubcategories" => MODULES_PATH . "admin/categories/getsubcategories.inc",
           "listproductsincategory" => MODULES_PATH . "admin/categories/listproductsincategory.inc",
           "deleteproduct"    => MODULES_PATH . "admin/products/deleteproduct.inc",
+          "movecategory"     => MODULES_PATH . "admin/categories/movecategory.inc",
       ),
       "adminpopup"      => array(
           "addcategory"      => MODULES_PATH . "admin/categories/addcategory.inc",
@@ -125,6 +127,7 @@ $Ajax_Map = array(
       "admin"       => array(
           "getsubcategories",
           "listproductsincategory",
+          "movecategory",
       )
 );
 // ---------------------------------------------------------------------------------------------- //
@@ -166,7 +169,7 @@ $Left_Menu_Map = array(
       "search"      => MODULES_PATH . "leftmenu/menu1.inc",
       "news"        => MODULES_PATH . "leftmenu/menu2.inc",
       "admin"       => MODULES_PATH . "admin/leftmenu/menu1.inc",
-      "admin2"      => MODULES_PATH . "admin/leftmenu/menu1.inc",
+      "adminpopup"  => MODULES_PATH . "admin/leftmenu/menu1.inc",
 );
 // ---------------------------------------------------------------------------------------------- //
 // RIGHT MENU
@@ -182,7 +185,7 @@ $Right_Menu_Map = array(
       "search"      => MODULES_PATH . "rightmenu/menu1.inc",
       "news"        => MODULES_PATH . "rightmenu/menu1.inc",
       "admin"       => MODULES_PATH . "admin/rightmenu/menu1.inc",
-      "admin2"      => MODULES_PATH . "admin/rightmenu/menu1.inc",
+      "adminpopup"  => MODULES_PATH . "admin/rightmenu/menu1.inc",
 );
 // ---------------------------------------------------------------------------------------------- //
 // HEADER
@@ -198,7 +201,7 @@ $Header_Map = array(
       "search"      => MODULES_PATH . "header/header1.inc",
       "news"        => MODULES_PATH . "header/header1.inc",
       "admin"       => MODULES_PATH . "admin/header/header1.inc",
-      "admin2"      => MODULES_PATH . "admin/header/header1.inc",
+      "adminpopup"  => MODULES_PATH . "admin/header/header1.inc",
 );
 // ---------------------------------------------------------------------------------------------- //
 // FOOTER
@@ -214,7 +217,7 @@ $Footer_Map = array(
       "search"      => MODULES_PATH . "footer/footer1.inc",
       "news"        => MODULES_PATH . "footer/footer1.inc",
       "admin"       => MODULES_PATH . "admin/footer/footer1.inc",
-      "admin2"      => MODULES_PATH . "admin/footer/footer1.inc",
+      "adminpopup"  => MODULES_PATH . "admin/footer/footer1.inc",
 );
 // ---------------------------------------------------------------------------------------------- //
 // TITLE
