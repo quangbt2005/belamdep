@@ -39,9 +39,10 @@ function BuildCategoryTree()
   $pointer = $Tree;
   $stack   = array();
   $html = "<ul>\n";
-$j = 0;
-  while(!empty($pointer) && $j<10){
+
+  while(!empty($pointer)){
     if(is_array($pointer)){
+      $break = false;
       do{
         $cat = current($pointer);
 
@@ -51,16 +52,19 @@ $j = 0;
             if(next($pointer)) $stack[] = $pointer; else $stack[] = '</ul>';
             $stack[] = $cat['childs'];
             $html .= "<ul>\n";
+            $break = true;
             break;
           }
         }
       } while (next($pointer));
-      if(!(current($pointer))) $html .= "</ul>\n";
-    } else {$html .= "</ul>\n";}
-$j++;
-    $pointer = array_pop($stack);
+      if(!(current($pointer)) && !$break) $html .= "</ul>\n";
+      $pointer = array_pop($stack);
+    } else {
+      $html .= "</ul>\n";
+      $pointer = array_pop($stack);
+    }
   }
-pd($html);
+
   return $html;
 }
 // ---------------------------------------------------------------------------------------------- //
