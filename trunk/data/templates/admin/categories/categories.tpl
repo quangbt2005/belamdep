@@ -9,7 +9,6 @@ function _bindDragDrop(){
       opacity: 0.5,
       addClasses: false,
       appendTo: 'body',
-      //cursor: 'crosshair',
       revert: 'invalid',
       revertDuration: 400,
       start: function(event, ui) {
@@ -45,13 +44,9 @@ function _bindDragDrop(){
       drop: function(event, ui) {
         var srcnode = ui.draggable[0].dtnode;
         var destnode = event.target.dtnode;
-        //logMsg("droppable.drop, %o, %o", event, ui);
-        //logMsg("drop source: %o", srcnode);
-        //logMsg("drop target: %o", destnode);
         var copynode = srcnode.toDict(true, function(dict){
           // dict.title = "Copy of " + dict.title;
           // delete dict.key; // Remove key, so a new one will be created
-          // srcnode.remove();
         });
         destnode.addChild(copynode);
         var url = "/admin/categories/" + srcnode.data.key + "/move/" + destnode.data.key;
