@@ -61,7 +61,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 } else {
   if($_SESSION['flash']['insert_product_ok'] == '1'){
     $smarty->assign('insert_product_ok', '1');
-    $_SESSION['flash']['insert_product_ok'] = '0';
+    unset($_SESSION['flash']['insert_product_ok']);
   }
 }
 

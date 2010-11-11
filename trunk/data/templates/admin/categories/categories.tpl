@@ -87,7 +87,7 @@ $(document).ready(function() {
       <div style="float: left;width: 30%;border: 0px solid #cccccc">
         <!-- <h1>Categories</h1> -->
         <div align="left">
-          <input type="button" value="Thêm danh mục" onclick="">&nbsp;&nbsp;
+          <input type="button" value="Thêm danh mục" onclick="openAddCategoryPopup();">&nbsp;&nbsp;
           <input type="button" value="Sửa danh mục" onclick="">&nbsp;&nbsp;
           <input type="button" value="Xóa danh mục" onclick="">
         </div>
@@ -132,7 +132,34 @@ function reloadProductList(category_id)
     }
   }
 }
-function addCategory(){
+function addTreeNewCategory(category_id, category_name)
+{
+  if($("#tree").dynatree("getActiveNode") != null){
+    activenode = $("#tree").dynatree("getActiveNode").addChild({
+      title: category_name,
+      key: category_id,
+      isFolder: true
+    });
+  } else {
+    activenode = $("#tree").dynatree("getRoot").childList[0].addChild({
+      title: category_name,
+      key: category_id,
+      isFolder: true
+    });
+  }
+}
+function openAddCategoryPopup(){
+  var url = '/admin/categories/add/';
+  if($("#tree").dynatree("getActiveNode") != null){
+    var dtnode_id = $("#tree").dynatree("getActiveNode").data.key;
+    url = url + dtnode_id;
+  }
+  else url = '/admin/categories/add/' + $("#tree").dynatree("getRoot").childList[0].data.key;
+
+  var topPos = 150;
+  var leftPos = 310;
+
+  var popup = window.open(url, 'Thêm danh mục mới',"resizable=no,menubar=no,toolbar=no,location=no,width=620,height=450,left="+leftPos+",top="+topPos);
 }
 function deleteCategory(){
 }
