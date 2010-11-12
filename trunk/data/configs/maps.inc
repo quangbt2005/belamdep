@@ -47,6 +47,7 @@ $Routes = array(
       "/admin/categories/:catid/move/:desid" => array('module'=>'admin',     'page'=>'movecategory'),
       "/admin/products/add/:catid"           => array('module'=>'adminpopup','page'=>'addproduct'),
       "/admin/products/delete/:productid/:catid" => array('module'=>'admin','page'=>'deleteproduct'),
+      "/admin/products/edit/:productid"      => array('module'=>'adminpopup','page'=>'editproduct'),
 );
 // ---------------------------------------------------------------------------------------------- //
 // MODULES MAP
@@ -115,6 +116,7 @@ $Module_Map = array(
       "adminpopup"      => array(
           "addcategory"      => MODULES_PATH . "admin/categories/addcategory.inc",
           "addproduct"       => MODULES_PATH . "admin/products/addproduct.inc",
+          "editproduct"      => MODULES_PATH . "admin/products/editproduct.inc",
       )
 );
 // ---------------------------------------------------------------------------------------------- //

@@ -8,7 +8,7 @@
   </tr>
   {foreach from=$Products_List item=product}
   <tr onMouseOver="this.style.backgroundColor='#71FFB8';" onMouseOut="this.style.backgroundColor='transparent';">
-    <td>{$product.products_name}</td>
+    <td><a href="javascript:openEditProductPopup({$product.products_id});">{$product.products_name}</a></td>
     <td align="right">100.000</td>
     <td align="right">{number_format number=$product.products_price}</td>
     <td align="right">{number_format number=$product.special_price}</td>

@@ -23,6 +23,7 @@ if($Request['is_ajax']==FALSE) {
   $smarty->assign( 'right_col',  $right_col );
   $smarty->assign( 'footer',     $footer );
 
+  $smarty->assign( 'Request',    $Request );
   $smarty->display( $layout );
 }
 else {
