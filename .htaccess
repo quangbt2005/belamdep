@@ -3,6 +3,8 @@ RewriteBase /
 RewriteCond  %{REQUEST_URI} !product_thumb.php
 RewriteCond  %{REQUEST_URI} !captcha.php
 RewriteCond  %{REQUEST_URI} !favico.ico
+RewriteCond  %{REQUEST_URI} !image.htm
+RewriteCond  %{REQUEST_URI} !link.htm
 
 RewriteRule !\.(js|ico|txt|gif|jpg|png|bmp|css)$ index.php
 #php_value magic_quotes_gpc on

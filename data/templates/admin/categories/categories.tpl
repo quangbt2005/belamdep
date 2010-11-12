@@ -110,6 +110,8 @@ $(document).ready(function() {
   </div>
 </div>{literal}
 <script type="text/javascript" language="javascript">
+var popupWidth  = 670;
+var popupHeight = 600;
 function openAddProductPopup(){
   var url = '/admin/products/add/';
   if($("#tree").dynatree("getActiveNode") != null){
@@ -121,7 +123,7 @@ function openAddProductPopup(){
   var topPos = 150;
   var leftPos = 310;
 
-  var popup = window.open(url, 'Thêm sản phẩm mới',"resizable=no,menubar=no,toolbar=no,location=no,width=620,height=450,left="+leftPos+",top="+topPos);
+  var popup = window.open(url, 'Thêm sản phẩm mới',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
 }
 function reloadProductList(category_id)
 {
@@ -159,7 +161,15 @@ function openAddCategoryPopup(){
   var topPos = 150;
   var leftPos = 310;
 
-  var popup = window.open(url, 'Thêm danh mục mới',"resizable=no,menubar=no,toolbar=no,location=no,width=620,height=450,left="+leftPos+",top="+topPos);
+  var popup = window.open(url, 'Thêm danh mục mới',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
+}
+function openEditProductPopup(product_id){
+  var url = '/admin/products/edit/' + product_id;
+
+  var topPos = 150;
+  var leftPos = 310;
+
+  var popup = window.open(url, 'Hiệu chỉnh thông tin sản phẩm',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
 }
 function deleteCategory(){
 }

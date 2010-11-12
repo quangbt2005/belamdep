@@ -173,3 +173,11 @@ li.folder
 .v-bottom{vertical-align: bottom !important;}
 /* --------------------------------------------------------------------------------------------- */
 .error_field{ font-family: Verdana, Arial, sans-serif; font-size: 11px; background-color: #ffb3b5; padding: 5 0 5 0;}
+/* --------------------------------------------------------------------------------------------- */
+/* FORE
+/* --------------------------------------------------------------------------------------------- */
+.fore-white{ color:white !important; }
+.fore-black{ color:black !important; }
+.fore-red{ color:red !important; }
+.fore-red1{ color:#FF8000 !important; }
+.fore-bulete{ color:#333399 !important; }
