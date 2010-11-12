@@ -3,7 +3,7 @@
 $(document).ready(function() {
   $('textarea.tinymce').tinymce({
     // Location of TinyMCE script
-    script_url : 'http://localhost:8081/jscripts/jquery/tiny_mce/tiny_mce.js',
+    script_url : '/jscripts/jquery/tiny_mce/tiny_mce.js',
 
     // General options
     theme : "advanced",
