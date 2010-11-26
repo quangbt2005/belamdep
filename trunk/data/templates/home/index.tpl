@@ -50,7 +50,7 @@
     </div>
 
     <div id="maxbox">
-    <a href="/sanpham/danhsach/42"><img src="/images/startbox/baby{php}echo rand(1,5);{/php}.png" alt="T-Shirts" title="T-Shirts" border="0" height="326"></a>
+    <a href="/sanpham/danhsach/42"><img src="/images/startbox/baby{php}echo rand(1,10);{/php}.png" alt="T-Shirts" title="T-Shirts" border="0" height="326"></a>
     </div>
   </div><!-- start_picture -->
   <br>
