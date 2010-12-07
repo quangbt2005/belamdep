@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="robots" content="index, follow" />
-  <meta name="keywords" content="Mẹ và bé, em bé, trẻ em, fashion, vietnam fashion, thoi trang, lam dep, làm đẹp, shop online, thời trang, quần áo, mũ nón, thun, jean, mặc, sản phẩm, bà mẹ, mẹ, trẻ, nhỏ, nít, sơ sinh, tắm, quần, áo, áo khoác, giày, dép, giày dép, mũ, nón, đồ chơi, mỹ phẩm, my pham, chăm sóc da, cham soc da, dưỡng da, duong da, kid, children, hàng hiệu, cao cấp, kem đánh răng, sữa tắm, dầu gội, da, khuyến mại, khuyến mại, bộ sưu tập, bo suu tap, dinh duong, dinh dưỡng, mặc đẹp, mac dep" />
+  <meta name="keywords" content="mỹ phẩm bà mẹ,mỹ phẩm trẻ em,dầu gội em bé,dầu gội cho bé,mỹ phẩm cho bé,dưỡng da cho bé,sữa tắm không cay mắt,dầu gội không cay mắt,sữa tắm cho bé,xà bông cho bé,mẹ & bé,me & be,mẹ và bé,trẻ sơ sinh,em bé,trẻ em,thoi trang,thời trang,lam dep,làm đẹp,shop online,quần áo,mũ nón,thun,jean,quần áo,áo khoác,giày dép,mũ,nón,đồ chơi,mỹ phẩm,my pham,chăm sóc da,cham soc da,dưỡng da,duong da,kem đánh răng,sữa tắm,dầu gội,bà mẹ,sơ sinh" />
   <meta name="description" content="Chuyên kinh doanh các sản phẩm dành cho bà mẹ và trẻ em. Các sản phẩm chính gồm quần áo thời trang, vật dụng, trang sức, mỹ phẩm, sản phẩm dinh dưỡng, thực phẩm/dược phẩm chức năng, đồ chơi" />
   <h1 style="POSITION: absolute;LEFT: -999em;">Shop các sản phẩm cao cấp dành cho Mẹ và Bé</h1>
   <link rel="StyleSheet" href="/style/common.css" type="text/css" />
