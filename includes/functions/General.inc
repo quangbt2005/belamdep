@@ -532,12 +532,34 @@ function mailSMTP($from_name,$from,$to,$cc,$bcc,$subject,$message)
     $mail->From     = $from;
     $mail->FromName = $from_name;
     $mail->ClearAddresses();
-    $mail->AddAddress($to);
-    if($cc!=''){
-        $mail->AddAddress($cc);
+    if(!empty($to)){
+      if(is_array($to)){
+        foreach($to as $to_addr){
+          $mail->AddAddress($to_addr);
+        }
+      } else {
+        $mail->AddAddress($to);
+      }
     }
-    if($bcc!=''){
-        $mail->AddAddress($bcc);
+
+    if(!empty($cc)){
+      if(is_array($cc)){
+        foreach($cc as $cc_addr){
+          $mail->AddCC($cc_addr);
+        }
+      } else {
+        $mail->AddCC($cc);
+      }
+    }
+
+    if(!empty($bcc)){
+      if(is_array($bcc)){
+        foreach($bcc as $bcc_addr){
+          $mail->AddCC($bcc_addr);
+        }
+      } else {
+        $mail->AddCC($bcc);
+      }
     }
     $mail->WordWrap = 50;                              // set word wrap
     $mail->IsHTML(true);

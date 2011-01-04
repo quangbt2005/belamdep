@@ -22,7 +22,7 @@
   <div class="scrollWrapper">
     <div class="scrollableArea">
       {foreach from=$OtherProductsList item=other}
-      <a href="/sanpham/{$other.products_id}/chitiet"><img src="/product_thumb.php?f={$other.products_image}&w=auto&h=120&ma=150&cx=150&cy=150" width="150" height="150" border="0"></a>
+      <a href="/sanpham/{$other.products_id}/chitiet" title="{$other.products_name} {number_format number=$other.products_price}VND"><img src="/product_thumb.php?f={$other.products_image}&w=auto&h=120&ma=150&cx=150&cy=150" width="150" height="150" border="0"></a>
       {/foreach}
     </div>
   </div>
