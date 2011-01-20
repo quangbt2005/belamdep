@@ -19,7 +19,7 @@
 </div>
 </div>
 <div class="seperator"></div>
-{TitleBox title='BẢO HIỂM GIÁO DỤC&nbsp;&nbsp;<img src="/images/123_hot.gif" border="0">'}
+{TitleBox title='BẢO HIỂM GIÁO DỤC&nbsp;&nbsp;<img src="/images/hot.gif" border="0">'}
 <div style="background-color: #7DCCFF; width="100%">
 <div class="side_container">
 <div class="t-left" style="padding-left: 5px">

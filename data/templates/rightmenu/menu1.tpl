@@ -1,4 +1,4 @@
-{TitleBox title='Khuyến Mãi&nbsp;&nbsp;<img src="/images/123_hot.gif" border="0">&nbsp;<img src="/images/123_hot.gif" border="0">' href="/sanpham/giamgia/danhsach/1" hrefoptions='class="saleofflink"'}
+{TitleBox title='Khuyến Mãi&nbsp;&nbsp;<img src="/images/123_hot.gif" border="0">' href="/sanpham/giamgia/danhsach/1" hrefoptions='class="saleofflink"'}
 <div style="background-color: #7DCCFF; width="100%">
 <div class="side_container">
 <div id="divSaleOff" class="t-center h150" style="padding: 10 0 10 0"></div>
