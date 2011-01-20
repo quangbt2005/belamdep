@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         'customers_telephone'       =>  $_SESSION['checkout']['phone'],
         'payment_method'            =>  $_SESSION['checkout']['method'],
         'note'                      =>  $_SESSION['checkout']['note'],
-        'date_purchased'            =>  date('Y-m-d'),
+        'date_purchased'            =>  date('Y-m-d H:i:s'),
         'orders_status'             =>  '1',));
 
     DB_Insert(TBL_ORDERS_TOTAL, array(
