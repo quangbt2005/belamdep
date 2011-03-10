@@ -39,5 +39,9 @@
 </table><br>
 
 <table width="100%" cellpadding="0" cellspacing="0" class="register">
+  {if $smarty.session.checkout.method == 'Cổng thanh toán Bảo Kim'}
+  <tr><th><input border="0" type="image" name="btnConfirm" value="Confirm" title=" Thanh toán qua Bảo Kim " alt="Thanh toán qua Bảo Kim" src="/images/btn_pay_now_2.png"></th></tr>
+  {else}
   <tr><th><input border="0" type="image" name="btnConfirm" value="Confirm" title=" Tiếp tục " alt="Tiếp tục" src="/images/languages/vietnam/buttons/button_confirm_order.gif"></th></tr>
+  {/if}
 </table></form><br>

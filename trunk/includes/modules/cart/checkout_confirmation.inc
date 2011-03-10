@@ -3,6 +3,8 @@
 /* Created on Dec 7, 2008                                                                         */
 /**************************************************************************************************/
 require_once( FUNCTIONS_PATH . "DB.inc" );
+require_once( LIB_PATH . "PaymentGates/baokim/BaoKimPayment.php" );
+
 define('EMAIL_TEXT_SUBJECT', 'Đơn hàng tại BELAMDEP.COM');
 define('EMAIL_TEXT_ORDER_TEXT', "Xin chào bạn.<br>Cảm ơn bạn đã xem và đặt hàng tại website của chúng tôi.<br><b><h1>Chi tiết đơn hàng:</h1></b>");
 define('EMAIL_TEXT_DATE_ORDERED', "<span style=\"color:blue;\">Ngày đặt hàng: %s</span><br>");
@@ -98,10 +100,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     mailSMTP('BELAMDEP.COM', 'admin@belamdep.com', $_SESSION['checkout']['email'], NULL, NULL, 'Đơn hàng từ BELAMDEP.COM', $email_order);
 
+    $payment_method = $_SESSION['checkout']['method'];
+    $payment = new BaoKimPayment();
+    $baokim = $payment->createRequestUrl(date('His'), 'quangbt2005@gmail.com', $_SESSION['cart']['total_price'], 0, 0, '', 'http://belamdep.com/thanhtoan/hoantat', '', '');
+
     unset($_SESSION['checkout']);
     unset($_SESSION['cart']);
 
-    header('Location: /thanhtoan/hoantat');
+    if($payment_method == 'Cổng thanh toán Bảo Kim'){
+      header('Location: ' . $baokim);
+    } else {
+      header('Location: /thanhtoan/hoantat');
+    }
     exit;
   } else {
     $errs[] = 'Mã an toàn không đúng.';
@@ -110,6 +120,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $smarty->assign( "error_count", count($errs) );
   $smarty->assign( "errs", $errs );
 }
+
 // ---------------------------------------------------------------------------------------------- //
 //
 // ---------------------------------------------------------------------------------------------- //

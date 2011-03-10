@@ -37,6 +37,7 @@
   <p><span style="background-color: rgb(255, 255, 0);">Á Châu (ACB): </span></p>
   <p>Nguyễn Thị Minh Hải </p>
   <p><font color="#ff0000"><b>4041 6931 8020 5507</b></font></p>
+  <p><a href="http://baokim.vn" target="blank"><img src="/images/baokim_logo.jpg" width="180"></a></p>
 </div>
 </div>
 </div>
