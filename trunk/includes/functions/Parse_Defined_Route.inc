@@ -9,7 +9,11 @@ function Parse_Defined_Route()
 {
   global $Routes;
 
-  $url   = trim(strtolower( $_SERVER["REQUEST_URI"] ), '/');
+  $query_string = '?' . $_SERVER['QUERY_STRING'];
+  $url = trim(strtolower( $_SERVER["REQUEST_URI"] ), '/');
+  if($_SERVER['QUERY_STRING'] != ''){
+  	$url = str_replace($query_string,'',$url);
+  }
   $url_parts = explode('/', $url);
 
   foreach($Routes as $key => $value){
