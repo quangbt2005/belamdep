@@ -5,6 +5,10 @@
 <br><br><br>
 <div class="f15 fb t-center">Cám ơn bạn đã xem và đặt hàng tại website của chúng tôi!</div>
 <br><br><br>
+{if $payment_gateway_return_error == 1}
+<p style="color: red;font-weight: bold">Bạn đã chọn phương thức thanh toán qua <a style="color: blue" href="{$gateway_url}" target="blank">Cổng thanh toán {$gateway}</a>. Tuy nhiên quá trình thanh toán đã không thành công. Chúng tôi sẽ xem xét và giải quyết đơn hàng của bạn trong thời gian sớm nhất.</p>
+<br><br>
+{/if}
 <table width="100%" cellpadding="0" cellspacing="0" class="register">
   <tr><th><a href="/trangchu"><img border="0" title=" Tiếp tục " alt="Tiếp tục" src="/images/languages/vietnam/buttons/button_continue.gif"></a></th></tr>
 </table>
