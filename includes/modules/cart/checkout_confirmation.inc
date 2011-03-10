@@ -4,6 +4,7 @@
 /**************************************************************************************************/
 require_once( FUNCTIONS_PATH . "DB.inc" );
 require_once( LIB_PATH . "PaymentGates/baokim/BaoKimPayment.php" );
+require_once( LIB_PATH . "PaymentGates/nganluong/nganluong.php" );
 
 define('EMAIL_TEXT_SUBJECT', 'Đơn hàng tại BELAMDEP.COM');
 define('EMAIL_TEXT_ORDER_TEXT', "Xin chào bạn.<br>Cảm ơn bạn đã xem và đặt hàng tại website của chúng tôi.<br><b><h1>Chi tiết đơn hàng:</h1></b>");
@@ -101,15 +102,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     mailSMTP('BELAMDEP.COM', 'admin@belamdep.com', $_SESSION['checkout']['email'], NULL, NULL, 'Đơn hàng từ BELAMDEP.COM', $email_order);
 
     $payment_method = $_SESSION['checkout']['method'];
-    $payment = new BaoKimPayment();
-    $baokim = $payment->createRequestUrl(date('His'), 'quangbt2005@gmail.com', $_SESSION['cart']['total_price'], 0, 0, '', 'http://belamdep.com/thanhtoan/hoantat', '', '');
-
-    unset($_SESSION['checkout']);
-    unset($_SESSION['cart']);
+    $bk_payment = new BaoKimPayment();
+    $baokim = $bk_payment->createRequestUrl(date('His'), 'quangbt2005@gmail.com', $_SESSION['cart']['total_price'], 0, 0, 'Thanh toán đơn hàng từ BELAMDEP.COM', 'http://belamdep.com/thanhtoan/hoantat', '', '');
+    $nl_payment = new NL_Checkout();
+    $nganluong = $nl_payment->buildCheckoutUrl('http://belamdep.com/thanhtoan/hoantat', 'quangbt2005@gmail.com', 'Thanh toán đơn hàng từ BELAMDEP.COM', date('His'), $_SESSION['cart']['total_price']);
 
     if($payment_method == 'Cổng thanh toán Bảo Kim'){
       header('Location: ' . $baokim);
+    } elseif($payment_method == 'Cổng thanh toán Ngân Lượng'){
+      header('Location: ' . $nganluong);
     } else {
+      unset($_SESSION['checkout']);
+      unset($_SESSION['cart']);
+
       header('Location: /thanhtoan/hoantat');
     }
     exit;
