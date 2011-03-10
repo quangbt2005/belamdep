@@ -27,6 +27,7 @@ $Routes = array(
       "/thanhtoan"                         => array('module'=>'cart',      'page'=>'checkout1'),
       "/thanhtoan/xacnhan"                 => array('module'=>'cart',      'page'=>'checkout2'),
       "/thanhtoan/hoantat"                 => array('module'=>'cart',      'page'=>'checkout3'),
+      "/thanhtoan/:paymentgw/hoantat"      => array('module'=>'cart',      'page'=>'checkout4'),
       "/lienhe"                            => array('module'=>'helper',    'page'=>'contact'),
       "/lienhe/thanhcong"                  => array('module'=>'helper',    'page'=>'contact_success'),
       "/huongdanmuahang"                   => array('module'=>'helper',    'page'=>'buyinghelper'),
@@ -71,6 +72,7 @@ $Module_Map = array(
           "checkout1"   => MODULES_PATH . "cart/checkout.inc",
           "checkout2"   => MODULES_PATH . "cart/checkout_confirmation.inc",
           "checkout3"   => MODULES_PATH . "cart/checkout_success.inc",
+          "checkout4"   => MODULES_PATH . "cart/payment_gateways_return.inc",
       ),
       "account"    => array(
           "manage"           => MODULES_PATH . "account/manage.inc",

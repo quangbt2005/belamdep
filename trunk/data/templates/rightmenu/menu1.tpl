@@ -43,3 +43,19 @@
   <a class="contact" href="ymsgr:sendIM?thuynguyenc2"><p class="yahoo_contact">thuynguyenc2</p></a>
 </div>
 </div>
+<div class="seperator"></div>
+{TitleBox title="TÀI KHOẢN NGÂN HÀNG"}
+<div style="background-color: #7DCCFF; width="100%">
+<div class="side_container">
+<div class="t-left" style="padding-left: 5px">
+  <span style="background-color: rgb(255, 255, 0);">VietcomBank(VCB): </span>
+  <p>Nguyễn Thị Thanh Thủy</p>
+  <p><b><font color="#ff0000">025 100 158 7962</font></b></p>
+  <p><span style="background-color: rgb(255, 255, 0);">Á Châu (ACB): </span></p>
+  <p>Nguyễn Thị Minh Hải </p>
+  <p><font color="#ff0000"><b>4041 6931 8020 5507</b></font></p>
+  <p><a href="http://baokim.vn" target="blank"><img src="/images/baokim_logo.jpg" width="180"></a></p>
+  <p><a href="http://nganluong.vn" target="blank"><img src="/images/ngan_luong_logo.png" width="180"></a></p>
+</div>
+</div>
+</div>
