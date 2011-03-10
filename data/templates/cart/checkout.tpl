@@ -23,6 +23,7 @@
       <select name="drpMethod" class="w180">
         <option value="Tại nơi giao hàng"{if $smarty.post.drpMethod=='Tại nơi giao hàng' || $smarty.session.checkout.method=='Tại nơi giao hàng'} selected="selected"{/if}>Tại nơi giao hàng</option>
         <option value="Chuyển khoản ngân hàng"{if $smarty.post.drpMethod=='Chuyển khoản ngân hàng' || $smarty.session.checkout.method=='Chuyển khoản ngân hàng'} selected="selected"{/if}>Chuyển khoản ngân hàng</option>
+        <option value="Cổng thanh toán Bảo Kim"{if $smarty.post.drpMethod=='Cổng thanh toán Bảo Kim' || $smarty.session.checkout.method=='Cổng thanh toán Bảo Kim'} selected="selected"{/if}>Cổng thanh toán Bảo Kim</option>
         <option value="Trực tiếp tại cửa hàng"{if $smarty.post.drpMethod=='Trực tiếp tại cửa hàng' || $smarty.session.checkout.method=='Trực tiếp tại cửa hàng'} selected="selected"{/if}>Trực tiếp tại cửa hàng</option>
       </select>
     </td>
