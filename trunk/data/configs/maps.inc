@@ -26,8 +26,8 @@ $Routes = array(
       "/giohang/capnhat"                   => array('module'=>'cart',      'page'=>'update'),
       "/thanhtoan"                         => array('module'=>'cart',      'page'=>'checkout1'),
       "/thanhtoan/xacnhan"                 => array('module'=>'cart',      'page'=>'checkout2'),
-      "/thanhtoan/hoantat"                 => array('module'=>'cart',      'page'=>'checkout3'),
-      "/thanhtoan/:paymentgw/hoantat"      => array('module'=>'cart',      'page'=>'checkout4'),
+      "/thanhtoan/hoantat/:hash"           => array('module'=>'cart',      'page'=>'checkout3'),
+      "/thanhtoan/:paymntgw/hoantat/:hash" => array('module'=>'cart',      'page'=>'checkout4'),
       "/lienhe"                            => array('module'=>'helper',    'page'=>'contact'),
       "/lienhe/thanhcong"                  => array('module'=>'helper',    'page'=>'contact_success'),
       "/huongdanmuahang"                   => array('module'=>'helper',    'page'=>'buyinghelper'),
@@ -38,6 +38,7 @@ $Routes = array(
       "/tintuc"                            => array('module'=>'news',      'page'=>'index'),
       "/tintuc/danhmuc/:catid"             => array('module'=>'news',      'page'=>'news_in_cat'),
       "/tintuc/:id/chitiet"                => array('module'=>'news',      'page'=>'news_detail'),
+      "/donhang/:hash"                     => array('module'=>'orders',    'page'=>'view'),
       // ADMIN ---------------------------------------------------------------------------------- //
       "/admin/login"                         => array('module'=>'admin',     'page'=>'login'),
       "/admin/home"                          => array('module'=>'admin',     'page'=>'home'),
@@ -105,6 +106,9 @@ $Module_Map = array(
           "news_in_cat"   => MODULES_PATH . "news/news_in_cat.inc",
           "news_detail"   => MODULES_PATH . "news/news_detail.inc",
       ),
+      "orders"      => array(
+          "view"          => MODULES_PATH . "orders/view.inc",
+      ),
       "admin"       => array(
           "dashboard"        => MODULES_PATH . "admin/home/home.inc",
           "login"            => MODULES_PATH . "admin/login/login.inc",
@@ -156,6 +160,7 @@ $Layout_Map = array(
       "helper"      => "layouts/layout03.tpl",
       "search"      => "layouts/layout03.tpl",
       "news"        => "layouts/layout03.tpl",
+      "orders"      => "layouts/layout03.tpl",
       "admin"       => "admin/layouts/layout01.tpl",
       "adminpopup"  => "admin/layouts/popup.tpl",
 );
@@ -171,6 +176,7 @@ $Left_Menu_Map = array(
       "logon"       => MODULES_PATH . "leftmenu/menu1.inc",
       "helper"      => MODULES_PATH . "leftmenu/menu1.inc",
       "search"      => MODULES_PATH . "leftmenu/menu1.inc",
+      "orders"      => MODULES_PATH . "leftmenu/menu1.inc",
       "news"        => MODULES_PATH . "leftmenu/menu2.inc",
       "admin"       => MODULES_PATH . "admin/leftmenu/menu1.inc",
       "adminpopup"  => MODULES_PATH . "admin/leftmenu/menu1.inc",
@@ -187,6 +193,7 @@ $Right_Menu_Map = array(
       "logon"       => MODULES_PATH . "rightmenu/menu1.inc",
       "helper"      => MODULES_PATH . "rightmenu/menu1.inc",
       "search"      => MODULES_PATH . "rightmenu/menu1.inc",
+      "orders"      => MODULES_PATH . "rightmenu/menu1.inc",
       "news"        => MODULES_PATH . "rightmenu/menu1.inc",
       "admin"       => MODULES_PATH . "admin/rightmenu/menu1.inc",
       "adminpopup"  => MODULES_PATH . "admin/rightmenu/menu1.inc",
@@ -204,6 +211,7 @@ $Header_Map = array(
       "helper"      => MODULES_PATH . "header/header1.inc",
       "search"      => MODULES_PATH . "header/header1.inc",
       "news"        => MODULES_PATH . "header/header1.inc",
+      "orders"      => MODULES_PATH . "header/header1.inc",
       "admin"       => MODULES_PATH . "admin/header/header1.inc",
       "adminpopup"  => MODULES_PATH . "admin/header/header1.inc",
 );
@@ -220,6 +228,7 @@ $Footer_Map = array(
       "helper"      => MODULES_PATH . "footer/footer1.inc",
       "search"      => MODULES_PATH . "footer/footer1.inc",
       "news"        => MODULES_PATH . "footer/footer1.inc",
+      "orders"      => MODULES_PATH . "footer/footer1.inc",
       "admin"       => MODULES_PATH . "admin/footer/footer1.inc",
       "adminpopup"  => MODULES_PATH . "admin/footer/footer1.inc",
 );

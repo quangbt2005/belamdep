@@ -16,6 +16,7 @@ define('EMAIL_TEXT_PAYMENT_METHOD', "<span style=\"color:blue;\">Phương thức
 define('EMAIL_TEXT_NGUOI_THANH_TOAN', "<span style=\"color:blue;\">Người thanh toán: </span><b style=\"color:red\">%s</b><br>");
 define('EMAIL_TEXT_NOTE', "<span style=\"color:blue;\">Ghi chú khác: %s</span><br>");
 define('EMAIL_TEXT_SUCCESS', '<br>Đơn hàng của bạn đã được chúng tôi ghi nhận. Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất có thể để thảo luận về việc giao/nhận hàng.<br>');
+define('EMAIL_TEXT_ORDER_VIEW', '<br>Bất kỳ lúc nào bạn cũng có thể xem lại đơn hàng trên website của chúng tôi tại <a href="http://belamdep.com/donhang/%s" style="color:blue" target="blank">đây</a>.<br>');
 define('EMAIL_TEXT_CONTACT', '<br>BELAMDEP.COM<br>' . STORE_ADDRESS . '<br>MB: ' . STORE_PHONE_1 . '<br>Email: ' . STORE_EMAIL_1);
 define('DATE_FORMAT_LONG', '%A %d %B, %Y');
 // ---------------------------------------------------------------------------------------------- //
@@ -28,6 +29,7 @@ if( !isset( $_SESSION["checkout"] ) ) {
 $errs = array();
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $code = $_POST['txtCode'];
+  $hash = md5(date('H-i-s'));
 
   if(strtolower($code) == strtolower($_SESSION['checkout']['seccode'])){
     $order_id = DB_Insert(TBL_ORDERS, array(
@@ -39,7 +41,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         'payment_method'            =>  $_SESSION['checkout']['method'],
         'note'                      =>  $_SESSION['checkout']['note'],
         'date_purchased'            =>  date('Y-m-d H:i:s'),
-        'orders_status'             =>  '1',));
+        'orders_status'             =>  '1',
+        'hash'                      =>  $hash,));
 
     DB_Insert(TBL_ORDERS_TOTAL, array(
         'orders_id'    =>  $order_id,
@@ -97,15 +100,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email_order .= sprintf(EMAIL_TEXT_PAYMENT_METHOD, $_SESSION['checkout']['method']);
     $email_order .= sprintf(EMAIL_TEXT_NOTE, $_SESSION['checkout']['note']);
     $email_order .= EMAIL_TEXT_SUCCESS;
+    $email_order .= sprintf(EMAIL_TEXT_ORDER_VIEW, $hash);
     $email_order .= EMAIL_TEXT_CONTACT;
 
     mailSMTP('BELAMDEP.COM', 'admin@belamdep.com', $_SESSION['checkout']['email'], NULL, NULL, 'Đơn hàng từ BELAMDEP.COM', $email_order);
 
     $payment_method = $_SESSION['checkout']['method'];
     $bk_payment = new BaoKimPayment();
-    $baokim = $bk_payment->createRequestUrl(date('His'), 'quangbt2005@gmail.com', $_SESSION['cart']['total_price'], 0, 0, 'Thanh toán đơn hàng từ BELAMDEP.COM', 'http://belamdep.com/thanhtoan/bk/hoantat', '', '');
+    $baokim = $bk_payment->createRequestUrl(date('His'), 'quangbt2005@gmail.com', $_SESSION['cart']['total_price'], 0, 0, 'Thanh toán đơn hàng từ BELAMDEP.COM', 'http://belamdep.com/thanhtoan/bk/hoantat/' . $hash, '', '');
     $nl_payment = new NL_Checkout();
-    $nganluong = $nl_payment->buildCheckoutUrl('http://belamdep.com/thanhtoan/nl/hoantat', 'quangbt2005@gmail.com', 'Thanh toán đơn hàng từ BELAMDEP.COM', date('His'), $_SESSION['cart']['total_price']);
+    $nganluong = $nl_payment->buildCheckoutUrl('http://belamdep.com/thanhtoan/nl/hoantat/' . $hash, 'quangbt2005@gmail.com', 'Thanh toán đơn hàng từ BELAMDEP.COM', date('His'), $_SESSION['cart']['total_price']);
 
     if($payment_method == 'Cổng thanh toán Bảo Kim'){
       header('Location: ' . $baokim);
@@ -115,7 +119,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       unset($_SESSION['checkout']);
       unset($_SESSION['cart']);
 
-      header('Location: /thanhtoan/hoantat');
+      header('Location: /thanhtoan/hoantat/' . $hash);
     }
     exit;
   } else {

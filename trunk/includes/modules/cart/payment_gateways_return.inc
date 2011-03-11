@@ -6,7 +6,9 @@ require_once( FUNCTIONS_PATH . "DB.inc" );
 require_once( LIB_PATH . "PaymentGates/baokim/BaoKimPayment.php" );
 require_once( LIB_PATH . "PaymentGates/nganluong/nganluong.php" );
 
-$gateway = strtolower($Request['parameters'][":paymentgw"]);
+$gateway = strtolower($Request['parameters'][":paymntgw"]);
+$hash = $Request['parameters'][":hash"];
+$smarty->assign('hash', $hash);
 
 if($gateway == 'bk'){
   $smarty->assign('gateway', 'Bảo Kim');

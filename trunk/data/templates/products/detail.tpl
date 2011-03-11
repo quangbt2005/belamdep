@@ -11,7 +11,7 @@
 </table>
 {else}
 <p class="f20 fb">Không tìm thấy sản phẩm !</p>
-<p><img src="/product_thumb.php?f=t58677.jpg&h=80&w=auto"></p><br><br><br><br><br><br>
+<p><img src="/images/cry.gif"></p><br><br><br><br><br><br>
 <div class="container t-right"><p><a href="/"><img border="0" width="110" title=" Quay lại " alt="Quay lại" src="/images/languages/vietnam/buttons/button_back.gif"></a></p></div>
 {/if}
 <br /><br />
