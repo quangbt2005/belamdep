@@ -103,9 +103,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $payment_method = $_SESSION['checkout']['method'];
     $bk_payment = new BaoKimPayment();
-    $baokim = $bk_payment->createRequestUrl(date('His'), 'quangbt2005@gmail.com', $_SESSION['cart']['total_price'], 0, 0, 'Thanh toán đơn hàng từ BELAMDEP.COM', 'http://belamdep.com/thanhtoan/hoantat', '', '');
+    $baokim = $bk_payment->createRequestUrl(date('His'), 'quangbt2005@gmail.com', $_SESSION['cart']['total_price'], 0, 0, 'Thanh toán đơn hàng từ BELAMDEP.COM', 'http://belamdep.com/thanhtoan/bk/hoantat', '', '');
     $nl_payment = new NL_Checkout();
-    $nganluong = $nl_payment->buildCheckoutUrl('http://belamdep.com/thanhtoan/hoantat', 'quangbt2005@gmail.com', 'Thanh toán đơn hàng từ BELAMDEP.COM', date('His'), $_SESSION['cart']['total_price']);
+    $nganluong = $nl_payment->buildCheckoutUrl('http://belamdep.com/thanhtoan/nl/hoantat', 'quangbt2005@gmail.com', 'Thanh toán đơn hàng từ BELAMDEP.COM', date('His'), $_SESSION['cart']['total_price']);
 
     if($payment_method == 'Cổng thanh toán Bảo Kim'){
       header('Location: ' . $baokim);

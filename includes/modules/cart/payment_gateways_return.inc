@@ -10,11 +10,14 @@ $gateway = strtolower($Request['parameters'][":paymentgw"]);
 
 if($gateway == 'bk'){
   $smarty->assign('gateway', 'Bảo Kim');
+  $smarty->assign('gateway_url', 'http://baokim.vn');
 
-  $smarty->assign( "error_count", count($errs) );
-  $smarty->assign( "errs", $errs );
+  $bk_pament = new BaoKimPayment();
+  $check = $bk_pament->verifyResponseUrl($_GET);
 
-  $center_col = $smarty->fetch( "cart/checkout_confirmation.tpl" );
+  if(!$check){
+    // $smarty->assign('payment_gateway_return_error', 1);
+  }
 } elseif($gateway == 'nl'){
   $smarty->assign('gateway', 'Ngân Lượng');
   $smarty->assign('gateway_url', 'http://nganluong.vn');
@@ -41,10 +44,16 @@ if($gateway == 'bk'){
               'created_date'    => date('Y-m-d H:i:s'),
             ));
   if(!$check){
-  	$smarty->assign('payment_gateway_return_error', 1);
+  	// $smarty->assign('payment_gateway_return_error', 1);
   }
-  $center_col = $smarty->fetch( "cart/checkout_success.tpl" );
 }
+
+if(isset($_SESSION['checkout'])){
+	unset($_SESSION['checkout']);
+  unset($_SESSION['cart']);
+}
+
+$center_col = $smarty->fetch( "cart/checkout_success.tpl" );
 // ---------------------------------------------------------------------------------------------- //
 //
 // ---------------------------------------------------------------------------------------------- //
