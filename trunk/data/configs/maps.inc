@@ -48,8 +48,12 @@ $Routes = array(
       "/admin/categories/:catid/products"    => array('module'=>'admin',     'page'=>'listproductsincategory'),
       "/admin/categories/:catid/move/:desid" => array('module'=>'admin',     'page'=>'movecategory'),
       "/admin/products/add/:catid"           => array('module'=>'adminpopup','page'=>'addproduct'),
-      "/admin/products/delete/:productid/:catid" => array('module'=>'admin','page'=>'deleteproduct'),
+      "/admin/products/delete/:productid/:catid" => array('module'=>'admin', 'page'=>'deleteproduct'),
       "/admin/products/edit/:productid"      => array('module'=>'adminpopup','page'=>'editproduct'),
+      "/admin/orders/list"                   => array('module'=>'admin',     'page'=>'orderslist'),
+      "/admin/orders/:orderid/detail"        => array('module'=>'adminpopup','page'=>'orderdetail'),
+      "/admin/orders/:orderid/delete"        => array('module'=>'admin',     'page'=>'ordersdelete'),
+      "/admin/orders/getlist"                => array('module'=>'admin',     'page'=>'getorderslist'),
 );
 // ---------------------------------------------------------------------------------------------- //
 // MODULES MAP
@@ -118,11 +122,15 @@ $Module_Map = array(
           "listproductsincategory" => MODULES_PATH . "admin/categories/listproductsincategory.inc",
           "deleteproduct"    => MODULES_PATH . "admin/products/deleteproduct.inc",
           "movecategory"     => MODULES_PATH . "admin/categories/movecategory.inc",
+          "orderslist"       => MODULES_PATH . "admin/orders/list.inc",
+          "ordersdelete"     => MODULES_PATH . "admin/orders/delete.inc",
+          "getorderslist"    => MODULES_PATH . "admin/orders/getlist.inc",
       ),
       "adminpopup"      => array(
           "addcategory"      => MODULES_PATH . "admin/categories/addcategory.inc",
           "addproduct"       => MODULES_PATH . "admin/products/addproduct.inc",
           "editproduct"      => MODULES_PATH . "admin/products/editproduct.inc",
+          "orderdetail"      => MODULES_PATH . "admin/orders/detail.inc",
       )
 );
 // ---------------------------------------------------------------------------------------------- //
@@ -136,6 +144,9 @@ $Ajax_Map = array(
           "getsubcategories",
           "listproductsincategory",
           "movecategory",
+          "deleteproduct",
+          "ordersdelete",
+          "getorderslist"
       )
 );
 // ---------------------------------------------------------------------------------------------- //
