@@ -16,7 +16,7 @@
     <li>
       <a href="#">Sales</a>
       <ul>
-        <li><a href="#">Orders</a></li>
+        <li><a href="/admin/orders/list">Orders</a></li>
         <li><a href="#">Customers</a></li>
       </ul>
     </li>
