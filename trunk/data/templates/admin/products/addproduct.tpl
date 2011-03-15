@@ -1,5 +1,30 @@
+{literal}
+<script type="text/javascript" language="javascript">
+$(document).ready(function() {
+  $('textarea.tinymce').tinymce({
+    // Location of TinyMCE script
+    script_url : '/jscripts/jquery/tiny_mce/tiny_mce.js',
+
+    // General options
+    theme : "advanced",
+    // plugins : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,advlist",
+    plugins : "advimage,advlink,insertdatetime,directionality",
+
+    // Theme options
+    theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,fontselect,fontsizeselect",
+    theme_advanced_buttons2 : "link,unlink,image,|,forecolor,backcolor",
+    theme_advanced_buttons3 : "",
+    theme_advanced_toolbar_location : "top",
+    theme_advanced_toolbar_align : "left",
+
+    external_link_list_url : "lists/link_list.js",
+	external_image_list_url : "lists/image_list.js",
+  });
+});
+</script>
+{/literal}
 <form method="post" enctype="multipart/form-data">
-<div class="content" style="width: 600px;margin:0 auto;">
+<div class="content" style="width: 800px;margin:0 auto;">
   <div class="header1">Thêm sản phẩm mới</div>
     <div class="blu-container" style="padding: 10px;text-align: center">
       {if $errors_count > 0}
@@ -11,7 +36,7 @@
       <table cellpadding="0" cellspacing="0" width="100%" class="vlist">
         <tr>
           <th align="right" style="padding-right: 5px">Tên Sản Phẩm</th>
-          <td align="left" style="padding-left: 5px"><input name="txtProductName" type="text" class="w240" value="{$smarty.post.txtProductName}"></td>
+          <td align="left" style="padding-left: 5px"><input name="txtProductName" type="text" class="w340" value="{$smarty.post.txtProductName}"></td>
         </tr>
         <tr>
           <th align="right" style="padding-right: 5px">Danh Mục</th>
@@ -26,8 +51,8 @@
           <td align="left" style="padding-left: 5px"><input name="txtProductQuantity" type="text" class="w50 t-right" value="{$smarty.post.txtProductQuantity}"></td>
         </tr>
         <tr>
-          <th align="right" style="padding-right: 5px">Chi Tiết Sản Phẩm</th>
-          <td align="left" style="padding-left: 5px"><textarea name="txtProductDescription" cols="40" rows="6" class="w240">{$smarty.post.txtProductDescription}</textarea></td>
+          <th align="right" style="padding-right: 5px" width="120">Chi Tiết Sản Phẩm</th>
+          <td align="left" style="padding: 5px"><textarea name="txtProductDescription" rows="25" class="tinymce" style="width: 100%;">{$smarty.post.txtProductDescription}</textarea></td>
         </tr>
         <tr>
           <th align="right" style="padding-right: 5px">Hình Sản Phẩm</th>

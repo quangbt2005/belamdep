@@ -110,8 +110,8 @@ $(document).ready(function() {
   </div>
 </div>{literal}
 <script type="text/javascript" language="javascript">
-var popupWidth  = 670;
-var popupHeight = 600;
+var popupWidth  = 840;
+var popupHeight = 700;
 function openAddProductPopup(){
   var url = '/admin/products/add/';
   if($("#tree").dynatree("getActiveNode") != null){

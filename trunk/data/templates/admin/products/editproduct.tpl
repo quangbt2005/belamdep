@@ -24,7 +24,7 @@ $(document).ready(function() {
 </script>
 {/literal}
 <form method="post" enctype="multipart/form-data">
-<div class="content" style="width: 650px;margin:0 auto;">
+<div class="content" style="width: 800px;margin:0 auto;">
   <div class="header1">Hiệu chỉnh thông tin sản phẩm</div>
     <div class="blu-container" style="padding: 10px;text-align: center">
       {if $errors_count > 0}
@@ -36,7 +36,7 @@ $(document).ready(function() {
       <table cellpadding="0" cellspacing="0" width="100%" class="vlist">
         <tr>
           <th align="right" style="padding-right: 5px">Tên Sản Phẩm</th>
-          <td align="left" style="padding-left: 5px"><input name="txtProductName" type="text" class="w240" value="{$txtProductName}"></td>
+          <td align="left" style="padding-left: 5px"><input name="txtProductName" type="text" class="w340" value="{$txtProductName}"></td>
         </tr>
         <tr>
           <th align="right" style="padding-right: 5px">Danh Mục</th>
@@ -57,8 +57,8 @@ $(document).ready(function() {
           <td align="left" style="padding-left: 5px"><input name="txtProductQuantity" type="text" class="w50 t-right" value="{$txtProductQuantity}"></td>
         </tr>
         <tr>
-          <th align="right" style="padding-right: 5px">Chi Tiết Sản Phẩm</th>
-          <td align="left" style="padding: 5px"><textarea name="txtProductDescription" rows="15" class="tinymce" style="width: 100%;">{$txtProductDescription}</textarea></td>
+          <th align="right" style="padding-right: 5px" width="120">Chi Tiết Sản Phẩm</th>
+          <td align="left" style="padding: 5px"><textarea name="txtProductDescription" rows="25" class="tinymce" style="width: 100%;">{$txtProductDescription}</textarea></td>
         </tr>
         <tr>
           <th align="right" style="padding-right: 5px">Hình Sản Phẩm</th>
