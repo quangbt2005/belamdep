@@ -186,7 +186,7 @@ function List_Product_By_Category_Exactly( $category_id, $offset=0,
                . ' AND c.categories_id=' . $category_id
                . " AND p.products_id=pd.products_id AND pd.language_id='" . LANGUAGE_ID . "'"
                . ' ORDER BY p.products_date_added DESC LIMIT ' . $offset . ',' . $limit;
-// pd($query);
+  // pd($query);
   return P_MySQL_Real_SELECT_GetArrayIndex($query);
 }
 // ---------------------------------------------------------------------------------------------- //
@@ -398,6 +398,49 @@ function LoadBestSellerProducts($limit=MAX_BEST_SELLER)
   $query .= ' AND pd.language_id=1 ORDER BY products_ordered DESC, products_name limit ' . $limit;
 
   return P_MySQL_Real_SELECT_GetArrayIndex( $query );
+}
+// ---------------------------------------------------------------------------------------------- //
+//
+// ---------------------------------------------------------------------------------------------- //
+function List_Saleoff_Products_ID()
+{
+  $query = 'SELECT products_id,status FROM ' . TBL_SALEOFF . ' WHERE status=1';
+
+  $Raw = P_MySQL_Real_SELECT_GetArray( $query );
+
+  $Result = array();
+  foreach($Raw as $value){
+  	$Result[$value[0]] = $value[1];
+  }
+
+  return $Result;
+}
+// ---------------------------------------------------------------------------------------------- //
+//
+// ---------------------------------------------------------------------------------------------- //
+function LoadProductWithFullSaleOffInfo($product_id){
+	if( empty( $product_id ) ) {
+    return NULL;
+  }
+
+  $product_id = P_SQL_Quote_NumberOnly( $product_id );
+
+  $query  = 'SELECT p.products_id,pd.products_name,p.products_price,pc.categories_name,ps.*,';
+  $query .= ' pc.categories_id FROM ' . TBL_PRODUCTS;
+  $query .= ' p INNER JOIN ' . TBL_PRO_DES . ' pd USING (products_id)';
+  $query .= ' INNER JOIN ' . TBL_PRO2CAT . ' USING(products_id)';
+  $query .= ' INNER JOIN ' . TBL_CAT_DES . ' pc USING(categories_id)';
+  $query .= ' LEFT JOIN ' . TBL_SALEOFF . ' ps USING (products_id)';
+  $query .= ' WHERE p.products_id=' . $product_id;
+  $query .= ' LIMIT 1';
+
+  $Result = P_MySQL_Real_SELECT_GetArrayIndex( $query );
+
+  if( empty( $Result[0] ) == FALSE ) {
+    return $Result[0];
+  }
+
+  return NULL;
 }
 // ---------------------------------------------------------------------------------------------- //
 //
