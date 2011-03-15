@@ -50,6 +50,7 @@ $Routes = array(
       "/admin/products/add/:catid"           => array('module'=>'adminpopup','page'=>'addproduct'),
       "/admin/products/delete/:productid/:catid" => array('module'=>'admin', 'page'=>'deleteproduct'),
       "/admin/products/edit/:productid"      => array('module'=>'adminpopup','page'=>'editproduct'),
+      "/admin/products/saleoff/:productid"   => array('module'=>'adminpopup','page'=>'saleoffsetting'),
       "/admin/orders/list"                   => array('module'=>'admin',     'page'=>'orderslist'),
       "/admin/orders/:orderid/detail"        => array('module'=>'adminpopup','page'=>'orderdetail'),
       "/admin/orders/:orderid/delete"        => array('module'=>'admin',     'page'=>'ordersdelete'),
@@ -131,6 +132,7 @@ $Module_Map = array(
           "addproduct"       => MODULES_PATH . "admin/products/addproduct.inc",
           "editproduct"      => MODULES_PATH . "admin/products/editproduct.inc",
           "orderdetail"      => MODULES_PATH . "admin/orders/detail.inc",
+          "saleoffsetting"   => MODULES_PATH . "admin/products/saleoff_setting.inc",
       )
 );
 // ---------------------------------------------------------------------------------------------- //

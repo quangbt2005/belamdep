@@ -171,6 +171,14 @@ function openEditProductPopup(product_id){
 
   var popup = window.open(url, 'Hiệu chỉnh thông tin sản phẩm',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
 }
+function openSaleoffSettingPopup(product_id){
+  var url = '/admin/products/saleoff/' + product_id;
+
+  var topPos = 150;
+  var leftPos = 310;
+
+  var popup = window.open(url, 'Khuyến mãi sản phẩm',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
+}
 function deleteCategory(){
 }
 function editCategory(){
