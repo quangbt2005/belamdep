@@ -18,7 +18,7 @@
             <th width="50">Xóa</th>
           </tr>
           {foreach from=$Orders item=order}
-          <tr onMouseOver="this.style.backgroundColor='#71FFB8';" onMouseOut="this.style.backgroundColor='transparent';">
+          <tr onMouseOver="this.style.backgroundColor='#71FFB8';" onMouseOut="this.style.backgroundColor='transparent';" style="cursor: hand;cursor: pointer;" ondblclick="openOrderDetailPopup({$order.orders_id})">
             <td><a href="javascript:openOrderDetailPopup({$order.orders_id});">{$order.customers_name|escape:"html"}</a></td>
             <td align="right">{number_format number=$order.value}&nbsp;VND</td>
             <td align="left">{$order.address|escape:"html"}&nbsp;</td>
@@ -66,7 +66,7 @@ function openOrderDetailPopup(order_id){
   var topPos = 150;
   var leftPos = 310;
 
-  var popup = window.open(url, 'Chi tiết đơn hàng',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
+  var popup = window.open(url, 'Chi_tiet_don_hang',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
 }
 function reloadOrdersList(){
   $.get("/admin/orders/getlist", function(data){

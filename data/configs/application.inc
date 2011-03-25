@@ -70,8 +70,8 @@ define( 'URL_ORDER_COMPLETE', WEB_ROOT . 'cart/complete' );
 // ---------------------------------------------------------------------------------------------- //
 // MAIL
 // ---------------------------------------------------------------------------------------------- //
-define( 'ADMIN_EMAIL', 'quangbt2005@gmail.com' );
-define( 'SUPPORT_EMAIL', 'quangbt2005@gmail.com' );
+// define( 'ADMIN_EMAIL', 'quangbt2005@gmail.com' );
+// define( 'SUPPORT_EMAIL', 'quangbt2005@gmail.com' );
 
 define( 'LANGUAGE_ID', 1 );
 define( 'LANGUAGE', 'vietnam' );
@@ -81,7 +81,7 @@ define( 'HEADING_NEWS_IMAGE_HEIGHT', '100' );
 // ---------------------------------------------------------------------------------------------- //
 // STORE CONTACT INFO
 // ---------------------------------------------------------------------------------------------- //
-define( 'STORE_ADDRESS', '36/52 &#273;&#432;&#7901;ng D2, P.25, Q.B&#236;nh Th&#7841;nh, TP.H&#7891; Ch&#237; Minh' );
-define( 'STORE_PHONE_1', '0909 217 130' );
-define( 'STORE_EMAIL_1', 'admin@belamdep.com' );
+// define( 'STORE_ADDRESS', '36/52 &#273;&#432;&#7901;ng D2, P.25, Q.B&#236;nh Th&#7841;nh, TP.H&#7891; Ch&#237; Minh' );
+// define( 'STORE_PHONE_1', '0909 217 130' );
+// define( 'STORE_EMAIL_1', 'admin@belamdep.com' );
 ?>

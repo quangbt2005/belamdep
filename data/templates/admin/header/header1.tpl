@@ -6,25 +6,19 @@
       <a href="/admin/dashboard">Dashboard</a>
     </li>
     <li>
-      <a href="#">Product</a>
+      <a href="/admin/categories">Sản phẩm</a>
+    </li>
+    <li>
+      <a href="/admin/orders/list"{if $pendingOrderCount > 0} style="text-decoration: blink;color: #ffff00;font-weight: bold"{/if}>Đơn hàng</a>
+    </li>
+    <li>
+      <a href="#">Thống kê</a>
       <ul>
-        <li><a href="/admin/categories">Categories</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Sale Off</a></li>
+        <li><a href="#">Bán chạy nhất</a></li>
       </ul>
     </li>
     <li>
-      <a href="#">Sales</a>
-      <ul>
-        <li><a href="/admin/orders/list">Orders</a></li>
-        <li><a href="#">Customers</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#">Reports</a>
-      <ul>
-        <li><a href="#">Best Seller</a></li>
-      </ul>
+      <a href="/admin/shop/config">Cấu hình</a>
     </li>
   </ul>
 </div>

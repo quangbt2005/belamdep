@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_SESSION['admin']['id']   = $user['id'];
         $_SESSION['admin']['name'] = $user['user_name'];
 // pd($_SESSION);
-        header('Location: /admin/dashboard');
+        header('Location: /admin/orders/list');
         exit;
       } else {
         $errs[] = 'User name hoặc mật khẩu không đúng.';

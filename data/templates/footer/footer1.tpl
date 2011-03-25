@@ -8,7 +8,7 @@
   <span class="f7 fb">
   <p>Bản quyền © 2010 Be Lam Dep</p>
   {$STORE_ADDRESS}<br>
-  Điện Thoại: {$STORE_PHONE_1}<br>
-  Email: {$STORE_EMAIL_1}
+  Điện Thoại: {$PHONE_1}<br>
+  Email: {$STORE_EMAIL}
   </span>
 </div>

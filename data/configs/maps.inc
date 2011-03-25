@@ -55,6 +55,7 @@ $Routes = array(
       "/admin/orders/:orderid/detail"        => array('module'=>'adminpopup','page'=>'orderdetail'),
       "/admin/orders/:orderid/delete"        => array('module'=>'admin',     'page'=>'ordersdelete'),
       "/admin/orders/getlist"                => array('module'=>'admin',     'page'=>'getorderslist'),
+      "/admin/shop/config"                   => array('module'=>'admin',     'page'=>'shopconfig'),
 );
 // ---------------------------------------------------------------------------------------------- //
 // MODULES MAP
@@ -126,6 +127,7 @@ $Module_Map = array(
           "orderslist"       => MODULES_PATH . "admin/orders/list.inc",
           "ordersdelete"     => MODULES_PATH . "admin/orders/delete.inc",
           "getorderslist"    => MODULES_PATH . "admin/orders/getlist.inc",
+          "shopconfig"       => MODULES_PATH . "admin/shop/configuration.inc",
       ),
       "adminpopup"      => array(
           "addcategory"      => MODULES_PATH . "admin/categories/addcategory.inc",

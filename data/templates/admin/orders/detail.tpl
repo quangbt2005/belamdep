@@ -69,7 +69,8 @@
 </div>
 </form>{if $update_order_ok==1}
 <script type="text/javascript" language="javascript">
-window.opener.reloadOrdersList();
+// window.opener.reloadOrdersList();
+window.opener.location.reload();
 alert('Đã lưu thay đổi');
 // window.close();
 </script>{/if}

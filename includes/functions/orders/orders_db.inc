@@ -63,4 +63,12 @@ function LoadOrderByHash($hash)
   return NULL;
 }
 // ---------------------------------------------------------------------------------------------- //
+function CountPendingOrders()
+{
+  $query  = "SELECT COUNT(1) as pending_order FROM " . TBL_ORDERS . " WHERE orders_status='1'";
+  $Result = P_MySQL_Real_SELECT( $query );
+
+  return $Result[0];
+}
+// ---------------------------------------------------------------------------------------------- //
 ?>
