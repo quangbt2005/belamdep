@@ -123,7 +123,7 @@ function openAddProductPopup(){
   var topPos = 150;
   var leftPos = 310;
 
-  var popup = window.open(url, 'Thêm sản phẩm mới',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
+  var popup = window.open(url, 'Them_san_pham_moi',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
 }
 function reloadProductList(category_id)
 {
@@ -161,7 +161,7 @@ function openAddCategoryPopup(){
   var topPos = 150;
   var leftPos = 310;
 
-  var popup = window.open(url, 'Thêm danh mục mới',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
+  var popup = window.open(url, 'Them_danh_muc_moi',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
 }
 function openEditProductPopup(product_id){
   var url = '/admin/products/edit/' + product_id;
@@ -169,7 +169,7 @@ function openEditProductPopup(product_id){
   var topPos = 150;
   var leftPos = 310;
 
-  var popup = window.open(url, 'Hiệu chỉnh thông tin sản phẩm',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
+  var popup = window.open(url, 'Hieu_chinh_thong_tin_san_pham',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
 }
 function openSaleoffSettingPopup(product_id){
   var url = '/admin/products/saleoff/' + product_id;
@@ -177,7 +177,7 @@ function openSaleoffSettingPopup(product_id){
   var topPos = 150;
   var leftPos = 310;
 
-  var popup = window.open(url, 'Khuyến mãi sản phẩm',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
+  var popup = window.open(url, 'Khuyen_mai_san_pham',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
 }
 function deleteCategory(){
 }

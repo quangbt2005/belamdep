@@ -1,14 +1,18 @@
 <?php
 error_reporting(0);
 // error_reporting(E_ALL);
-
 require_once( "includes/init.inc" );
-require_once( "includes/mysql.inc" );
 // ---------------------------------------------------------------------------------------------- //
 $Request = Parse__URL();
 // p($Request);
 if($Request['is_ajax']==FALSE) {
   $layout  = Layout( $Request["response_module"] );
+  // -------------------------------------------------------------------------------------------- //
+  if($Request["response_module"] == 'admin'){
+    require_once( FUNCTIONS_PATH . "orders/orders_db.inc" );
+  	$pendingOrderCount = CountPendingOrders();
+    $smarty->assign( 'pendingOrderCount', $pendingOrderCount );
+  }
   // -------------------------------------------------------------------------------------------- //
   require( $Request['header_script'] );
   require( $Request['left_script'] );
