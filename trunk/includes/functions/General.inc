@@ -788,6 +788,7 @@ function sendYMNotify($msg=''){
   }
   if($signon){
     $engine->send_message('quangbt2005', json_encode($msg));
+	$engine->send_message('thuynguyenc2', json_encode($msg));
     $engine->signoff();
   }
 }
