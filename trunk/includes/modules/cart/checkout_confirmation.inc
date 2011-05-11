@@ -104,6 +104,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email_order .= EMAIL_TEXT_CONTACT;
 
     mailSMTP('BELAMDEP.COM', 'admin@belamdep.com', $_SESSION['checkout']['email'], NULL, NULL, 'Đơn hàng từ BELAMDEP.COM', $email_order);
+    sendYMNotify('Co don hang BELAMDEP.COM cua khach hang ' . $_SESSION['checkout']['name']);
 
     $payment_method = $_SESSION['checkout']['method'];
     $bk_payment = new BaoKimPayment();
