@@ -42,6 +42,7 @@ define( 'NO_MODULE',                  'home' );
 define( 'NO_PAGE',                    'default' );
 
 define( 'DEFAULT_LAYOUT',             'layouts/layout03.tpl' );
+define( 'YM_PATH',                    SYS_ROOT . 'ym/yms.txt' );
 // ---------------------------------------------------------------------------------------------- //
 // For paging
 // ---------------------------------------------------------------------------------------------- //
@@ -84,4 +85,11 @@ define( 'HEADING_NEWS_IMAGE_HEIGHT', '100' );
 // define( 'STORE_ADDRESS', '36/52 &#273;&#432;&#7901;ng D2, P.25, Q.B&#236;nh Th&#7841;nh, TP.H&#7891; Ch&#237; Minh' );
 // define( 'STORE_PHONE_1', '0909 217 130' );
 // define( 'STORE_EMAIL_1', 'admin@belamdep.com' );
+// ---------------------------------------------------------------------------------------------- //
+// YM NOTIFIER CONFIG
+// ---------------------------------------------------------------------------------------------- //
+define( 'YM_USER',            'belamdep' );
+define( 'YM_USER_PASS',       'simple303' );
+define( 'YM_CONSUMER_KEY',    'dj0yJmk9NmE3OVIwYmQyU2dZJmQ9WVdrOWRHdFVZV2hITnpBbWNHbzlNVEUyTXpFMU9USTJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD0yNg--' );
+define( 'YM_CONSUMER_SECRET', '3a0f3ac40cfea6ca52841d707565a48e6318aa51' );
 ?>
