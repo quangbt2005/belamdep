@@ -776,10 +776,10 @@ function sendYM($contact, $msg=''){
 
   if(is_array($contact)){
     foreach($contact as $to){
-    	$engine->send_message($to, json_encode($msg));
+    	@$engine->send_message($to, json_encode($msg));
     }
   } else {
-  	$engine->send_message($contact, json_encode($msg));
+  	@$engine->send_message($contact, json_encode($msg));
   }
 }
 // ---------------------------------------------------------------------------------------------- //
