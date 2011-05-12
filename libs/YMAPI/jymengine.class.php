@@ -39,6 +39,7 @@ class JYMEngine
 	const URL_YM_NOTIFICATION_LONG = 'http://{{NOTIFICATION_SERVER}}/v1/pushchannel/{{USER}}';
 	const URL_YM_BUDDYREQUEST = 'http://developer.messenger.yahooapis.com/v1/buddyrequest/yahoo/{{USER}}';
 	const URL_YM_GROUP = 'http://developer.messenger.yahooapis.com/v1/group/{{GROUP}}/contact/yahoo/{{USER}}';
+  const URL_YM_SESSION = 'http://developer.messenger.yahooapis.com/v1/keepalive';
 
 	protected $_oauth;
 	public $_token;
