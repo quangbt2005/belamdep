@@ -768,28 +768,18 @@ function get_top_news_in_news_categories($category_id, $limit = '5')
   	 return $news_array;
 }
 // ---------------------------------------------------------------------------------------------- //
-function sendYMNotify($msg=''){
+function sendYM($contact, $msg=''){
   include_once (LIB_PATH . "YMAPI/jymengine.class.php");
-  $username = 'belamdep';
-  $password = 'simple303';
-  $consumer = 'dj0yJmk9NmE3OVIwYmQyU2dZJmQ9WVdrOWRHdFVZV2hITnpBbWNHbzlNVEUyTXpFMU9USTJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD0yNg--';
-  $consumer_secret = '3a0f3ac40cfea6ca52841d707565a48e6318aa51';
 
-  $engine = new JYMEngine($consumer, $consumer_secret, $username, $password);
+  $engine = new JYMEngine(YM_CONSUMER_KEY, YM_CONSUMER_SECRET, YM_USER, YM_USER_PASS);
+  $engine->load_current_session();
 
-  $engine->fetch_request_token();
-  $engine->fetch_access_token();
-
-  $signon = $engine->signon('', -1);
-  if(!$signon){
-  	$engine->fetch_request_token();
-    $engine->fetch_access_token();
-    $signon = $engine->signon('', -1);
-  }
-  if($signon){
-    $engine->send_message('quangbt2005', json_encode($msg));
-	$engine->send_message('thuynguyenc2', json_encode($msg));
-    $engine->signoff();
+  if(is_array($contact)){
+    foreach($contact as $to){
+    	$engine->send_message($to, json_encode($msg));
+    }
+  } else {
+  	$engine->send_message($contact, json_encode($msg));
   }
 }
 // ---------------------------------------------------------------------------------------------- //
