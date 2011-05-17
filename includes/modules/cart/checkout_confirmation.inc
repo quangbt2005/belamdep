@@ -104,11 +104,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email_order .= EMAIL_TEXT_CONTACT;
 
     mailSMTP('BELAMDEP.COM', 'admin@belamdep.com', $_SESSION['checkout']['email'], NULL, NULL, 'Đơn hàng từ BELAMDEP.COM', $email_order);
-    if($_SESSION['checkout']['note'] != '[TESTBLD]'){
+    /*if($_SESSION['checkout']['note'] != '[TESTBLD]'){
       sendYM(array('quangbt2005','thuynguyenc2','labay11180'), sprintf('[Thông báo tự động]Có đơn hàng BELAMDEP.COM của khách hàng %s, SĐT: %s', $_SESSION['checkout']['name'], $_SESSION['checkout']['phone']));
     } else {
       sendYM(array('quangbt2005','quangbt2005','quangbt2005'), sprintf('[Thông báo tự động]Có đơn hàng BELAMDEP.COM của khách hàng %s, SĐT: %s', $_SESSION['checkout']['name'], $_SESSION['checkout']['phone']));
-    }
+    }*/
 
     $payment_method = $_SESSION['checkout']['method'];
     $bk_payment = new BaoKimPayment();

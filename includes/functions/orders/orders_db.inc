@@ -71,4 +71,12 @@ function CountPendingOrders()
   return $Result[0];
 }
 // ---------------------------------------------------------------------------------------------- //
+function CountYMPendingOrder()
+{
+  $query  = "SELECT COUNT(1) as pending_order FROM " . TBL_ORDERS . " WHERE ym_notify='1'";
+  $Result = P_MySQL_Real_SELECT( $query );
+
+  return $Result[0];
+}
+// ---------------------------------------------------------------------------------------------- //
 ?>

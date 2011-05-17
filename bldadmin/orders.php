@@ -32,10 +32,15 @@
         $oID = tep_db_prepare_input($HTTP_GET_VARS['oID']);
         $status = tep_db_prepare_input($HTTP_POST_VARS['status']);
         $comments = tep_db_prepare_input($HTTP_POST_VARS['comments']);
+        $YM_Notify = $HTTP_POST_VARS['chkYMNotify']=='on' ? '1' : '0';
 
         $order_updated = false;
         $check_status_query = tep_db_query("select customers_name, customers_email_address, orders_status, date_purchased from " . TABLE_ORDERS . " where orders_id = '" . (int)$oID . "'");
         $check_status = tep_db_fetch_array($check_status_query);
+
+        // $query = "update " . TABLE_ORDERS . " set YM_Notify = '" . $YM_Notify . "', last_modified = now() where orders_id = '" . (int)$oID . "'";
+
+        tep_db_query("update " . TABLE_ORDERS . " set YM_Notify = '" . $YM_Notify . "', last_modified = now() where orders_id = '" . (int)$oID . "'");
 
         if ( ($check_status['orders_status'] != $status) || tep_not_null($comments)) {
           tep_db_query("update " . TABLE_ORDERS . " set orders_status = '" . tep_db_input($status) . "', last_modified = now() where orders_id = '" . (int)$oID . "'");
@@ -47,9 +52,9 @@
               $notify_comments = sprintf(EMAIL_TEXT_COMMENTS_UPDATE, $comments) . "\n\n";
             }
 
-            $email = STORE_NAME . "\n" . EMAIL_SEPARATOR . "\n" . EMAIL_TEXT_ORDER_NUMBER . ' ' . $oID . "\n" . EMAIL_TEXT_INVOICE_URL . ' ' . tep_catalog_href_link(FILENAME_CATALOG_ACCOUNT_HISTORY_INFO, 'order_id=' . $oID, 'SSL') . "\n" . EMAIL_TEXT_DATE_ORDERED . ' ' . tep_date_long($check_status['date_purchased']) . "\n\n" . $notify_comments . sprintf(EMAIL_TEXT_STATUS_UPDATE, $orders_status_array[$status]);
+            //$email = STORE_NAME . "\n" . EMAIL_SEPARATOR . "\n" . EMAIL_TEXT_ORDER_NUMBER . ' ' . $oID . "\n" . EMAIL_TEXT_INVOICE_URL . ' ' . tep_catalog_href_link(FILENAME_CATALOG_ACCOUNT_HISTORY_INFO, 'order_id=' . $oID, 'SSL') . "\n" . EMAIL_TEXT_DATE_ORDERED . ' ' . tep_date_long($check_status['date_purchased']) . "\n\n" . $notify_comments . sprintf(EMAIL_TEXT_STATUS_UPDATE, $orders_status_array[$status]);
 
-            tep_mail($check_status['customers_name'], $check_status['customers_email_address'], EMAIL_TEXT_SUBJECT, $email, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS);
+            //tep_mail($check_status['customers_name'], $check_status['customers_email_address'], EMAIL_TEXT_SUBJECT, $email, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS);
 
             $customer_notified = '1';
           }
@@ -58,9 +63,9 @@
 
           $order_updated = true;
         }
-
+$order_updated = true;
         if ($order_updated == true) {
-         $messageStack->add_session(SUCCESS_ORDER_UPDATED, 'success');
+          $messageStack->add_session(SUCCESS_ORDER_UPDATED, 'success');
         } else {
           $messageStack->add_session(WARNING_ORDER_NOT_UPDATED, 'warning');
         }
@@ -209,7 +214,7 @@
           echo '</i></small></nobr>';
         }
       }
-      
+
       echo '            </td>' . "\n" .
            '            <td class="dataTableContent" valign="top">' . $order->products[$i]['model'] . '</td>' . "\n" .
            // '            <td class="dataTableContent" align="right" valign="top">' . tep_display_tax_value($order->products[$i]['tax']) . '%</td>' . "\n" .
@@ -296,17 +301,13 @@
                 <td class="main"><b><?php echo ENTRY_STATUS; ?></b> <?php echo tep_draw_pull_down_menu('status', $orders_statuses, $order->info['orders_status']); ?></td>
               </tr>
               <tr>
-                <td class="main"><b><?php echo ENTRY_NOTIFY_CUSTOMER; ?></b> <?php echo tep_draw_checkbox_field('notify', '', true); ?></td>
-                <td class="main"><b><?php echo ENTRY_NOTIFY_COMMENTS; ?></b> <?php echo tep_draw_checkbox_field('notify_comments', '', true); ?></td>
+                <td class="main"><label for="chkYMNotify"><b>Nhắc nhở xử lý đơn hàng qua Yahoo</b></label>&nbsp;<?php echo tep_draw_checkbox_field('chkYMNotify', '', $order->info['YM_Notify'], ''); ?></td>
               </tr>
             </table></td>
             <td valign="top"><?php echo tep_image_submit('button_update.gif', IMAGE_UPDATE); ?></td>
           </tr>
         </table></td>
       </form></tr>
-      <tr>
-        <td colspan="2" align="right"><?php echo '<a href="' . tep_href_link(FILENAME_ORDERS_INVOICE, 'oID=' . $HTTP_GET_VARS['oID']) . '" TARGET="_blank">' . tep_image_button('button_invoice.gif', IMAGE_ORDERS_INVOICE) . '</a> <a href="' . tep_href_link(FILENAME_ORDERS_PACKINGSLIP, 'oID=' . $HTTP_GET_VARS['oID']) . '" TARGET="_blank">' . tep_image_button('button_packingslip.gif', IMAGE_ORDERS_PACKINGSLIP) . '</a> <a href="' . tep_href_link(FILENAME_ORDERS, tep_get_all_get_params(array('action'))) . '">' . tep_image_button('button_back.gif', IMAGE_BACK) . '</a>'; ?></td>
-      </tr>
 <?php
   } else {
 ?>
