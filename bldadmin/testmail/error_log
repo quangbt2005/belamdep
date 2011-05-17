@@ -1,0 +1,11 @@
+[18-May-2010 14:10:58] PHP Warning:  fsockopen() [<a href='function.fsockopen'>function.fsockopen</a>]: unable to connect to ssl://smtp.gmail.com:465 (Connection timed out) in /home/belamdep/public_html/testmail/class.smtp.php on line 122
+[18-May-2010 14:21:43] PHP Warning:  fsockopen() [<a href='function.fsockopen'>function.fsockopen</a>]: unable to connect to ssl://smtp.gmail.com:465 (Connection timed out) in /home/belamdep/public_html/testmail/class.smtp.php on line 122
+[18-May-2010 14:27:30] PHP Warning:  fsockopen() [<a href='function.fsockopen'>function.fsockopen</a>]: unable to connect to ssl://smtp.gmail.com:465 (Connection timed out) in /home/belamdep/public_html/testmail/class.smtp.php on line 122
+[18-May-2010 14:36:17] PHP Warning:  fsockopen() [<a href='function.fsockopen'>function.fsockopen</a>]: unable to connect to ssl://smtp.gmail.com:465 (Connection timed out) in /home/belamdep/public_html/testmail/class.smtp.php on line 122
+[23-Mar-2011 09:25:18] PHP Warning:  fsockopen() has been disabled for security reasons in /home/belamdep/public_html/bldadmin/testmail/class.smtp.php on line 122
+[23-Mar-2011 09:25:55] PHP Warning:  fsockopen() has been disabled for security reasons in /home/belamdep/public_html/bldadmin/testmail/class.smtp.php on line 122
+[23-Mar-2011 09:26:50] PHP Warning:  fsockopen() has been disabled for security reasons in /home/belamdep/public_html/bldadmin/testmail/class.smtp.php on line 122
+[23-Mar-2011 09:26:52] PHP Warning:  fsockopen() has been disabled for security reasons in /home/belamdep/public_html/bldadmin/testmail/class.smtp.php on line 122
+[23-Mar-2011 09:26:53] PHP Warning:  fsockopen() has been disabled for security reasons in /home/belamdep/public_html/bldadmin/testmail/class.smtp.php on line 122
+[23-Mar-2011 09:26:54] PHP Warning:  fsockopen() has been disabled for security reasons in /home/belamdep/public_html/bldadmin/testmail/class.smtp.php on line 122
+[23-Mar-2011 09:28:06] PHP Warning:  fsockopen() has been disabled for security reasons in /home/belamdep/public_html/bldadmin/testmail/class.smtp.php on line 122
