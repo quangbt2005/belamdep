@@ -216,7 +216,7 @@
   function tep_draw_selection_field($name, $type, $value = '', $checked = false, $compare = '') {
     global $HTTP_GET_VARS, $HTTP_POST_VARS;
 
-    $selection = '<input type="' . tep_output_string($type) . '" name="' . tep_output_string($name) . '"';
+    $selection = '<input type="' . tep_output_string($type) . '" name="' . tep_output_string($name) . '" id="' . tep_output_string($name) . '"';
 
     if (tep_not_null($value)) $selection .= ' value="' . tep_output_string($value) . '"';
 

@@ -39,7 +39,7 @@ class JYMEngine
 	const URL_YM_NOTIFICATION_LONG = 'http://{{NOTIFICATION_SERVER}}/v1/pushchannel/{{USER}}';
 	const URL_YM_BUDDYREQUEST = 'http://developer.messenger.yahooapis.com/v1/buddyrequest/yahoo/{{USER}}';
 	const URL_YM_GROUP = 'http://developer.messenger.yahooapis.com/v1/group/{{GROUP}}/contact/yahoo/{{USER}}';
-  const URL_YM_SESSION = 'http://developer.messenger.yahooapis.com/v1/keepalive';
+  const URL_YM_SESSION_KEEPALIVE = 'http://developer.messenger.yahooapis.com/v1/session/keepalive';
 
 	protected $_oauth;
 	public $_token;
@@ -522,11 +522,12 @@ class JYMEngine
   public function save_current_session(){
     $h = fopen(YM_PATH, 'w');
     if($h){
-      fwrite( $h, sprintf("%s\n%s\n%s\n%s",
+      fwrite( $h, sprintf("%s\n%s\n%s\n%s\n%s",
               $this->_ym['signon']['notifytoken'],
               $this->_ym['signon']['sessionId'],
               $this->_token['access']['oauth_token_secret'],
-              $this->_token['access']['oauth_token']));
+              $this->_token['access']['oauth_token'],
+              $this->_token['access']['oauth_session_handle']));
       fclose($h);
     }
   }
@@ -541,8 +542,41 @@ class JYMEngine
       $this->_ym['signon']['sessionId']               = $splited[1];
       $this->_token['access']['oauth_token_secret']   = $splited[2];
       $this->_token['access']['oauth_token']          = $splited[3];
+      $this->_token['access']['oauth_session_handle'] = $splited[4];
       fclose($h);
     }
+  }
+
+  public function keep_alive_session(){
+    $url = self::URL_YM_PRESENCE;
+    $url .= '?oauth_consumer_key='. $this->_config['consumer_key'];
+    $url .= '&oauth_nonce='. uniqid(rand());
+    $url .= '&oauth_signature='. $this->_config['secret_key']. '%26'. $this->_token['access']['oauth_token_secret'];
+    $url .= '&oauth_signature_method=PLAINTEXT';
+    $url .= '&oauth_timestamp='. time();
+    $url .= '&oauth_token='. $this->_token['access']['oauth_token'];
+    $url .= '&oauth_version=1.0';
+    $url .= '&sid='. $this->_ym['signon']['sessionId'];
+
+    $rs = $this->curl($url, 'get');
+
+    return $rs;
+  }
+
+  public function refresh_access_token(){
+    $url = 'https://api.login.yahoo.com/oauth/v2/get_token';
+    $url .= '?oauth_consumer_key='. $this->_config['consumer_key'];
+    $url .= '&oauth_nonce='. uniqid(rand());
+    $url .= '&oauth_signature='. $this->_config['secret_key']. '%26'. $this->_token['access']['oauth_token_secret'];
+    $url .= '&oauth_signature_method=PLAINTEXT';
+    $url .= '&oauth_timestamp='. time();
+    $url .= '&oauth_token='. $this->_token['access']['oauth_token'];
+    $url .= '&oauth_version=1.0';
+    $url .= '&oauth_session_handle=' . $this->_token['access']['oauth_session_handle'];
+
+    $rs = $this->curl($url, 'get');
+
+    return $rs;
   }
 }
 

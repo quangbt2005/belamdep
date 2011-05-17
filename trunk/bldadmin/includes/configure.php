@@ -1,18 +1,18 @@
 <?php
   // For production host --------------------------------------------------------------------------
-  define('HTTP_SERVER', 'http://belamdep.com');
+  /*define('HTTP_SERVER', 'http://belamdep.com');
   define('HTTP_CATALOG_SERVER', 'http://belamdep.com');
   define('HTTPS_CATALOG_SERVER', 'http://belamdep.com');
   define('DIR_FS_DOCUMENT_ROOT', '/home/belamdep/public_html/');
   define('DIR_FS_ADMIN', '/home/belamdep/public_html/bldadmin/');
-  define('DIR_FS_CATALOG', '/home/belamdep/public_html/');
+  define('DIR_FS_CATALOG', '/home/belamdep/public_html/');*/
   // For localhost --------------------------------------------------------------------------------
-  /*define('HTTP_SERVER', 'http://baby');
-  define('HTTP_CATALOG_SERVER', 'http://baby');
-  define('HTTPS_CATALOG_SERVER', 'http://baby');
+  define('HTTP_SERVER', 'http://localhost:8081');
+  define('HTTP_CATALOG_SERVER', 'http://localhost:8081');
+  define('HTTPS_CATALOG_SERVER', 'http://localhost:8081');
   define('DIR_FS_DOCUMENT_ROOT', 'd:/WWW/');
   define('DIR_FS_ADMIN', DIR_FS_DOCUMENT_ROOT . 'baby/bldadmin/');
-  define('DIR_FS_CATALOG', DIR_FS_DOCUMENT_ROOT . 'baby/');*/
+  define('DIR_FS_CATALOG', DIR_FS_DOCUMENT_ROOT . 'baby/');
   // Common ---------------------------------------------------------------------------------------
   define('ENABLE_SSL_CATALOG', 'false');
   define('DIR_WS_ADMIN', '/bldadmin/');
