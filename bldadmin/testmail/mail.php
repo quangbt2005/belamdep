@@ -9,17 +9,20 @@ function mailSMTP($from_name,$from,$to,$cc,$bcc,$subject,$message)
 //    $mail->SMTPAuth = true;                             // turn on SMTP authentication
 //    $mail->Username = 'admin@belamdep.com';             // SMTP username
 //    $mail->Password = 'mi@1lau';                        // SMTP password
-    
+
     $mail->IsSMTP();                        // send via SMTP
-    $mail->Host     = "web72.vinahost.vn";    // SMTP servers
+    // $mail->Host     = "web72.vinahost.vn";    // SMTP servers
+    $mail->Host     = "mail.eps.com.vn";    // SMTP servers
     $mail->SMTPAuth = true;                 // turn on SMTP authentication
-    $mail->Username = 'belamdep';          // SMTP username
-    $mail->Password = 'mi@1lauQua';      // SMTP password
+    // $mail->Username = 'belamdep';          // SMTP username
+    $mail->Username = 'support@kisvn.vn';          // SMTP username
+    // $mail->Password = 'mi@1lauQua';      // SMTP password
+    $mail->Password = 'qUVhlqX1Je5Q5jXc';      // SMTP password
 
     $mail->From     = $from;
     $mail->FromName = $from_name;
     $mail->ClearAddresses();
-    
+
     if(!empty($to)){
       if(is_array($to)){
         foreach($to as $to_addr){
@@ -54,7 +57,7 @@ function mailSMTP($from_name,$from,$to,$cc,$bcc,$subject,$message)
     $mail->CharSet = "UTF-8";
     $mail->Subject  =  $subject;
     $mail->Body     =  $message;
-    //$mail->Port     = 587;
+    $mail->Port     = 25;
     $ok = $mail->Send();
     //if($ok) echo 'phpmailer ok';
     //else
@@ -67,5 +70,6 @@ function mailSMTP($from_name,$from,$to,$cc,$bcc,$subject,$message)
 }
 
 //mailSMTP('Quang Tran', 'quang.tm@eps.com.vn', array('quangbt2005@gmail.com', 'quang.tm@eps.com.vn', 'admin@belamdep.com'), NULL, NULL, 'Test mail', 'MAKENO KEMENO');
-mailSMTP('Quang Tran', 'quang.tm@eps.com.vn', 'quangbt2005@gmail.com','quang.tm@eps.com.vn', NULL, 'Test mail', 'MAKENO KEMENO');
+$ok = mailSMTP('Quang Tran', 'quang.tm@eps.com.vn', NULL, NULL, NULL, 'Test mail', 'MAKENO KEMENO');
+print_r($ok);
 ?>
