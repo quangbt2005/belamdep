@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     DB_Insert(TBL_ORDERS_STATUS_HISTORY, array(
         'orders_id'         =>  $order_id,
         'orders_status_id'  =>  '1',
-        'date_added'        =>  'now()',
+        'date_added'        =>  date('Y-m-d H:i:s'),
         'customer_notified' =>  '1',
         'comments'          =>  ''));
 
