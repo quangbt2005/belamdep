@@ -1,4 +1,5 @@
 <?php
+ob_start("ob_gzhandler");
 error_reporting(0);
 // error_reporting(E_ALL);
 require_once( "includes/init.inc" );
@@ -33,4 +34,5 @@ if($Request['is_ajax']==FALSE) {
 else {
   require( $Request['center_script'] );
 }
+ob_flush();
 ?>

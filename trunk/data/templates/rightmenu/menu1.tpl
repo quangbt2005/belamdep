@@ -54,8 +54,8 @@
   <p><span style="background-color: rgb(255, 255, 0);">Á Châu (ACB): </span></p>
   <p>Nguyễn Thị Minh Hải </p>
   <p><font color="#ff0000"><b>4041 6931 8020 5507</b></font></p>
-  <p><a href="http://baokim.vn" target="blank"><img src="/images/baokim_logo.jpg" width="180" border="0"></a></p>
-  <p><a href="http://nganluong.vn" target="blank"><img src="/images/ngan_luong_logo.png" width="180" border="0"></a></p>
+  <p><a href="http://help.nganluong.vn/belamdep.com.html" target="_blank"><img src="/images/ngan_luong_logo.png" width="180" border="0"></a></p>
+  <p><a href="https://www.baokim.vn/payment_guide/huongdanbelamdep.html" target="_blank"><img src="/images/baokim_logo.jpg" width="180" border="0"></a></p>
 </div>
 </div>
 </div>

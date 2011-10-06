@@ -524,7 +524,7 @@ function mailSMTP($from_name,$from,$to,$cc,$bcc,$subject,$message)
     $mail = new PHPMailer();
 
     $mail->IsSMTP();                                    // send via SMTP
-    $mail->Host     = "server10.hostno1.vn";            // SMTP servers
+    $mail->Host     = "web72.vinahost.vn";              // SMTP servers
     $mail->SMTPAuth = true;                             // turn on SMTP authentication
     $mail->Username = 'admin@belamdep.com';             // SMTP username
     $mail->Password = 'mi@1lau';                        // SMTP password

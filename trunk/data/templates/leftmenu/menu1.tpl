@@ -1,4 +1,4 @@
-<div style="background-color: #7DCCFF; width="100%">
+<div style="background-color: #7DCCFF; width: 100%">
 <div class="side_container">
   <ul class="categories">
     {foreach from=$Categories item=cat}
@@ -9,7 +9,7 @@
 </div>
 <div class="seperator"></div>
 {TitleBox title="Bán chạy nhất"}
-<div style="background-color: #7DCCFF; width="100%">
+<div style="background-color: #7DCCFF; width: 100%">
   <div class="side_container">
     <div id="slideshow">
       <div id="controls">
@@ -28,7 +28,7 @@
 </div>
 <div class="seperator"></div>
 {TitleBox title='BẢO HIỂM GIÁO DỤC&nbsp;&nbsp;<img src="/images/hot.gif" border="0">'}
-<div style="background-color: #7DCCFF; width="100%">
+<div style="background-color: #7DCCFF; width: 100%">
 <div class="side_container">
 <div class="t-left" style="padding-left: 5px">
   <p>Để đảm bảo cho con bạn một quỹ tài chính an toàn xin liên hệ: </p>
