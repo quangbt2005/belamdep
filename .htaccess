@@ -2,9 +2,17 @@ RewriteEngine on
 RewriteBase /
 RewriteCond  %{REQUEST_URI} !product_thumb.php
 RewriteCond  %{REQUEST_URI} !captcha.php
+RewriteCond  %{REQUEST_URI} !loadexternal.php
 RewriteCond  %{REQUEST_URI} !favico.ico
 RewriteCond  %{REQUEST_URI} !image.htm
 RewriteCond  %{REQUEST_URI} !link.htm
+#RewriteCond  %{REQUEST_URI} !BN62t7k_XxlvqIY8MH1f5A--.html
+RewriteCond  %{REQUEST_URI} !google99842d0064fd4858.html
+RewriteCond  %{REQUEST_URI} !robots.txt
+RewriteCond  %{REQUEST_URI} !sitemap.xml
 
-RewriteRule !\.(js|ico|txt|gif|jpg|png|bmp|css)$ index.php
+RewriteRule !\.(js|ico|txt|gif|jpg|png|bmp|css|JPG)$ index.php
 #php_value magic_quotes_gpc on
+RewriteCond %{HTTP_HOST} ^belamdep.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www.belamdep.com$
+RewriteRule ^bldadmin\/?$ "http\:\/\/belamdep\.com\/admin\/login" [R=301,L]

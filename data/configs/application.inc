@@ -9,9 +9,9 @@ define( 'SUBDOMAIN', '' );
 // ---------------------------------------------------------------------------------------------- //
 // Just change SYS_ROOT when deploy
 // ---------------------------------------------------------------------------------------------- //
-//define( 'SYS_ROOT', '/home/belamdep/public_html/' . SUBDOMAIN );
+define( 'SYS_ROOT', '/home/belamdep/public_html/' . SUBDOMAIN );
 //define( 'SYS_ROOT', '/home/belamdep/public_html/b2v_blog/' . SUBDOMAIN );
-define( 'SYS_ROOT', 'd:/www/newbaby/' . SUBDOMAIN );
+//define( 'SYS_ROOT', 'd:/www/newbaby/' . SUBDOMAIN );
 
 define( 'WEB_ROOT', '/' . SUBDOMAIN );
 

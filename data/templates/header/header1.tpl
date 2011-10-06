@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="clear"></div>
-  <div class="headerNavigation" style="{if $BROWSER_NAME=='ie'}margin-bottom: -18px;{elseif $BROWSER_NAME=='opera'}margin-bottom: -10px;margin-top: -25px;{else}margin-top: -25px;{/if}">
+  <div class="headerNavigation" style="{if $BROWSER_NAME=='ie'}margin-bottom: -18px;{elseif $BROWSER_NAME=='opera'}margin-bottom: 0px;margin-top: -25px;{else}margin-top: -25px;{/if}">
     <ul class="headerNavigation">
             <li><a href="/home">TRANG CHỦ</a></li>
             <li><a href="/tintuc">KIẾN THỨC</a></li>
